@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+body {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-area {
+  margin: 20px;
+  border: 1px solid black;
+  width:900px;
+  height: 900px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field {
+  background-color: gray;
+  width: 30px;
+  height: 30px;
+}
+
+.firstHero {
+  background-color: red;
+}
+
+.secondHero {
+  background-color: blue;
+}
+
+.step-counter {
+  padding: 20px;  
+}
+
+.score {
+  padding: 20px; 
+}
+
+#counter {
+  width: 20px;
+}
