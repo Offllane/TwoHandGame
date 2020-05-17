@@ -1,37 +1,7 @@
-let gameArea = document.createElement("section");
-gameArea.classList.add("game-area");
-document.body.appendChild(gameArea);
-
-for (let i = 0; i < 900; i++) {
-  let field = document.createElement("div");
-  field.classList.add("field");
-  gameArea.appendChild(field);
-}
-
-let fieldsArray = document.getElementsByClassName("field");
-
-let x = 1;
-let y = 1;
-for (let i = 0; i < fieldsArray.length; i++) {
-  if (x < 30) {
-    fieldsArray[i].setAttribute("posX", x);
-    fieldsArray[i].setAttribute("posY", y);
-    x++;
-  } else {
-    fieldsArray[i].setAttribute("posX", x);
-    fieldsArray[i].setAttribute("posY", y);
-    y++;
-    x = 1;
-  }
-}
-
 let config = {
-  interval: 1000,
-  step:2,
-}
-
-let firstHeroCoordinates = [4, 5];
-let secondHeroCoordinates =[28, 29]
+  interval: 50,
+  step:10,
+};
 
 function moveHero(heroCoordinates,heroName, direction) {
   let speedX = 1;
@@ -58,19 +28,20 @@ function moveHero(heroCoordinates,heroName, direction) {
     speedY = 0;
   }
 
-    switch(direction){
+    clearAttackZone();
+    switch(direction){      
       case "up": heroCoordinates[1] -= speedY;
       break;
       case "down": heroCoordinates[1] += speedY;
       break;
       case "left": heroCoordinates[0] -= speedX;
       break;
-      case "right": heroCoordinates[0] += speedX;
+      case "right": heroCoordinates[0] += speedX;      
       break;
       default: break;
     }
     heroPosition = document.querySelector('[posX = "' + heroCoordinates[0] + '"][posY = "' +heroCoordinates[1] + '"]');
-
+    createNewAttackZone();
   heroPosition.classList.add(heroName);
 }
 
@@ -123,9 +94,7 @@ document.addEventListener("keydown", function (event) {
        heroDirection = "right";
        moveHero(secondHeroCoordinates, "secondHero", heroDirection);
      }
-  }
-  console.log(heroStepCounter);
- 
+  } 
 });
 
 moveHero(firstHeroCoordinates, "firstHero");

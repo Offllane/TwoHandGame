@@ -26,15 +26,23 @@ body {
 }
 
 .firstHero {
-  background-color: red;
+  background-color:  tomato !important;
+  z-index: 3;
 }
 
 .secondHero {
-  background-color: blue;
+  background-color: blue !important;
+  z-index: 3;
 }
 
 .step-counter {
   padding: 20px;  
+}
+
+.attack-area {
+  background-color: yellow;
+  opacity: .5;
+  z-index: 2;
 }
 
 .score {
