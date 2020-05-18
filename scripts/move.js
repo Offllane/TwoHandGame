@@ -12,19 +12,15 @@ function moveHero(heroCoordinates,heroName, direction) {
   currentHeroStep.classList.remove(heroName);  
   let heroPosition;
   if (heroCoordinates[0] == 1 && direction=="left") {
-    heroCoordinates[0] = 30;
     speedX = 0;
   }
   if (heroCoordinates[0] == 30 && direction == "right") {
-    heroCoordinates[0] = 1;
     speedX = 0;
   }
   if (heroCoordinates[1] == 1 && direction=="up") {
-    heroCoordinates[1] = 30;
     speedY = 0;
   }
   if (heroCoordinates[1] == 30 && direction == "down") {
-    heroCoordinates[1] = 1;
     speedY = 0;
   }
 
