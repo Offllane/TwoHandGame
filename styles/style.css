@@ -35,6 +35,10 @@ body {
   z-index: 3;
 }
 
+.enemy {
+  background-color: black !important;
+}
+
 .step-counter {
   padding: 20px;  
 }

@@ -1,4 +1,5 @@
-function clearAttackZone() {
+function clearAttackZone()
+{
   let x1, x2, y1, y2;
 
   x1 = firstHeroCoordinates[0];
@@ -7,32 +8,37 @@ function clearAttackZone() {
   y2 = secondHeroCoordinates[1];
 
 
-  for (let x = x1 + 1; x < x2; x++) {
+  for (let x = x1 + 1; x < x2; x++)
+  {
     let y = Math.round(((x1 * y2 - x2 * y1) * (-1) - x * (y1 - y2)) / (x2 - x1));
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.remove("attack-area");
   }
 
-  for (let y = y1 + 1; y < y2; y++) {
+  for (let y = y1 + 1; y < y2; y++)
+  {
     let x = Math.round(((y - y1) * (x2 - x1) / (y2 - y1)) + x1);
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.remove("attack-area");
   }
 
-  for (let x = x2 + 1; x < x1; x++) {
+  for (let x = x2 + 1; x < x1; x++)
+  {
     let y = Math.round(((x1 * y2 - x2 * y1) * (-1) - x * (y1 - y2)) / (x2 - x1));
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.remove("attack-area");
   }
 
-  for (let y = y2 + 1; y < y1; y++) {
+  for (let y = y2 + 1; y < y1; y++)
+  {
     let x = Math.round(((y - y1) * (x2 - x1) / (y2 - y1)) + x1);
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.remove("attack-area");
   }
 }
 
-function createNewAttackZone() {
+function createNewAttackZone()
+{
   let x1, x2, y1, y2;
 
   x1 = firstHeroCoordinates[0];
@@ -41,25 +47,29 @@ function createNewAttackZone() {
   y2 = secondHeroCoordinates[1];
 
 
-  for (let x = x1 + 1; x < x2; x++) {
+  for (let x = x1 + 1; x < x2; x++)
+  {
     let y = Math.round(((x1 * y2 - x2 * y1) * (-1) - x * (y1 - y2)) / (x2 - x1));
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.add("attack-area");
   }
 
-  for (let y = y1 + 1; y < y2; y++) {
+  for (let y = y1 + 1; y < y2; y++)
+  {
     let x = Math.round(((y - y1) * (x2 - x1) / (y2 - y1)) + x1);
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.add("attack-area");
   }
 
-  for (let x = x2 + 1; x < x1; x++) {
+  for (let x = x2 + 1; x < x1; x++)
+  {
     let y = Math.round(((x1 * y2 - x2 * y1) * (-1) - x * (y1 - y2)) / (x2 - x1));
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.add("attack-area");
   }
 
-  for (let y = y2 + 1; y < y1; y++) {
+  for (let y = y2 + 1; y < y1; y++)
+  {
     let x = Math.round(((y - y1) * (x2 - x1) / (y2 - y1)) + x1);
     let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
     currentAttackPosition.classList.add("attack-area");
