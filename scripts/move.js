@@ -1,6 +1,7 @@
 let config = {
   interval: 50,
   step: 10,
+  spawnInterval: 3000,
 };
 
 function moveHero(heroCoordinates, heroName, direction)

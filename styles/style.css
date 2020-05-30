@@ -49,6 +49,11 @@ body {
   z-index: 2;
 }
 
+.attack-event {
+  background-color: red !important;
+  z-index: 3;
+}
+
 .score {
   padding: 20px; 
 }
