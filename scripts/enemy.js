@@ -109,16 +109,16 @@ class Enemy
     switch (direction)
     {
       case "up":
-        this.pos.y -= speedY;
+        this.pos.y -= config.enemySpeed;
         break;
       case "down":
-        this.pos.y += speedY;
+        this.pos.y += config.enemySpeed;
         break;
       case "left":
-        this.pos.x -= speedX;
+        this.pos.x -= config.enemySpeed;
         break;
       case "right":
-        this.pos.x += speedX;
+        this.pos.x += config.enemySpeed;
         break;
       default:
         break;
@@ -145,7 +145,6 @@ function getSpawnCoordinates()
   }
   currentCoordinates.push(x);
   currentCoordinates.push(y);
-  console.log(firstHeroCoordinates);
   
   let random = Math.floor(Math.random() * 3);
   switch (random) {
@@ -181,13 +180,15 @@ function getSpawnCoordinates()
 }
 
 let enemiesList = [];
+let enemy = new Enemy(15, 15);
+enemiesList.push(enemy);
 
 setInterval(() =>
 {
   getSpawnCoordinates();
   let enemy = new Enemy(getSpawnCoordinates()[0], getSpawnCoordinates()[1]);
   enemiesList.push(enemy);
-}, 3000);
+}, config.enemySpawnTime);
 
 setInterval(() =>
 {

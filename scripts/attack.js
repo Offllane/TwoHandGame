@@ -83,13 +83,23 @@ function createNewAttackZone()
   }
 }
 
+let points = 1;
+
 document.addEventListener("keydown", function (event) {  
   let attackEventFieldsList = []; 
   if (event.code == "Space")
   {    
     attackZoneFieldsList.forEach(element => {
       element.classList.add("attack-event");
-      attackEventFieldsList.push(element);
+      if (element.classList.contains("enemy"))
+      {        
+        let deadenemy = enemiesList.findIndex(enemy => enemy.pos.x == element.getAttribute("posx") && enemy.pos.y == element.getAttribute("posy"));
+        enemiesList.splice(deadenemy, 1);
+        element.classList.remove("enemy");
+        document.getElementsByClassName("score")[0].innerHTML = `Your score is: ${points}`; 
+        points++;
+      }
+      attackEventFieldsList.push(element); 
     });
     setTimeout(() => {
       attackEventFieldsList.forEach(element => element.classList.remove("attack-event"));

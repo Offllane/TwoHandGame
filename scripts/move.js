@@ -1,13 +1,6 @@
-let config = {
-  interval: 50,
-  step: 10,
-  spawnInterval: 3000,
-};
-
 function moveHero(heroCoordinates, heroName, direction)
 {
-  let speedX = 1;
-  let speedY = 1;
+  config.heroSpeed = 1;
   let currentHeroStep = document.querySelector(
     '[posX = "' + heroCoordinates[0] + '"][posY = "' + heroCoordinates[1] + '"]'
   );
@@ -15,35 +8,35 @@ function moveHero(heroCoordinates, heroName, direction)
   let heroPosition;
   if (heroCoordinates[0] == 1 && direction == "left")
   {
-    speedX = 0;
+    config.heroSpeed = 0;
   }
   if (heroCoordinates[0] == 30 && direction == "right")
   {
-    speedX = 0;
+     config.heroSpeed = 0;
   }
   if (heroCoordinates[1] == 1 && direction == "up")
   {
-    speedY = 0;
+     config.heroSpeed = 0;
   }
   if (heroCoordinates[1] == 30 && direction == "down")
   {
-    speedY = 0;
+     config.heroSpeed = 0;
   }
 
   clearAttackZone();
   switch (direction)
   {
     case "up":
-      heroCoordinates[1] -= speedY;
+      heroCoordinates[1] -= config.heroSpeed;
       break;
     case "down":
-      heroCoordinates[1] += speedY;
+      heroCoordinates[1] +=  config.heroSpeed;
       break;
     case "left":
-      heroCoordinates[0] -= speedX;
+      heroCoordinates[0] -=  config.heroSpeed;
       break;
     case "right":
-      heroCoordinates[0] += speedX;
+      heroCoordinates[0] +=  config.heroSpeed;
       break;
     default:
       break;
