@@ -8,21 +8,19 @@ body {
   background-color: aquamarine;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .game-area {
   margin: 20px;
   border: 1px solid black;
-  width:900px;
-  height: 900px;
   display: flex;
   flex-wrap: wrap;
+  order: 2;
 }
 
 .field {
   background-color: gray;
-  width: 30px;
-  height: 30px;
 }
 
 .firstHero {
@@ -40,7 +38,9 @@ body {
 }
 
 .step-counter {
-  padding: 20px;  
+  margin-top: 20px;
+  padding-right: 20px;
+  order:3;
 }
 
 .attack-area {
@@ -55,7 +55,9 @@ body {
 }
 
 .score {
-  padding: 20px; 
+  width: 25%;
+  order: 1;
+   margin-top: 20px;
 }
 
 #counter {

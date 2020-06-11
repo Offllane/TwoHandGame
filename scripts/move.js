@@ -65,6 +65,12 @@ document.addEventListener("keydown", function(event)
   if (heroStepCounter > config.step)
   {
     heroDirection = "none";
+      enemiesList.forEach(enemy =>
+      {
+        enemy.selectTarget();
+      }); // enemies turn
+      heroStepCounter = 0; //add new turns to heroes
+      drawRemainingSteps(); // draw step quantity
   }
   else
   {
@@ -113,9 +119,3 @@ document.addEventListener("keydown", function(event)
 
 moveHero(firstHeroCoordinates, "firstHero");
 moveHero(secondHeroCoordinates, "secondHero");
-
-setInterval(() =>
-{
-  heroStepCounter = 0;
-  drawRemainingSteps();
-}, config.interval);

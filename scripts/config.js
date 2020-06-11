@@ -1,6 +1,6 @@
 let config = {
-  interval: 50,
-  step: 10,
+  interval: 500,
+  step: 4,
   spawnInterval: 3000,
   enemySpeed: 1,
   heroSpeed: 1,

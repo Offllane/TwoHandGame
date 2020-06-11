@@ -189,11 +189,3 @@ setInterval(() =>
   let enemy = new Enemy(getSpawnCoordinates()[0], getSpawnCoordinates()[1]);
   enemiesList.push(enemy);
 }, config.enemySpawnTime);
-
-setInterval(() =>
-{
-  enemiesList.forEach(enemy =>
-  {
-    enemy.selectTarget();
-  });
-}, 1000);
