@@ -13,14 +13,16 @@ let gameArea = document.createElement("section");
 gameArea.classList.add("game-area");
 gameArea.style.width = areaSize +'px';
 gameArea.style.height = areaSize + 'px';
+gameArea.style.backgroundSize = areaSize / 30 + 'px';
 document.body.appendChild(gameArea);
 
-for (let i = 0; i < 900; i++)
-{
+for (let i = 0; i < 900; i++) {
   let field = document.createElement("div");
   field.classList.add("field");
-  field.style.width = areaSize / 30 +'px';
-  field.style.height = areaSize / 30 +'px';
+  field.style.width = areaSize / 30 + 'px';
+  field.style.height = areaSize / 30 + 'px';
+  field.style.backgroundSize = areaSize / 30 - 5 + 'px';
+  field.style.zIndex = -1;
   gameArea.appendChild(field);
 }
 

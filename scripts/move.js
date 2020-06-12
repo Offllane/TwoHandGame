@@ -1,6 +1,6 @@
 function moveHero(heroCoordinates, heroName, direction)
 {
-  config.heroSpeed = 1;
+  let HS = config.heroSpeed;
   let currentHeroStep = document.querySelector(
     '[posX = "' + heroCoordinates[0] + '"][posY = "' + heroCoordinates[1] + '"]'
   );
@@ -8,35 +8,35 @@ function moveHero(heroCoordinates, heroName, direction)
   let heroPosition;
   if (heroCoordinates[0] == 1 && direction == "left")
   {
-    config.heroSpeed = 0;
+    HS = 0;
   }
   if (heroCoordinates[0] == 30 && direction == "right")
   {
-     config.heroSpeed = 0;
+     HS = 0;
   }
   if (heroCoordinates[1] == 1 && direction == "up")
   {
-     config.heroSpeed = 0;
+     HS = 0;
   }
   if (heroCoordinates[1] == 30 && direction == "down")
   {
-     config.heroSpeed = 0;
+     HS = 0;
   }
 
   clearAttackZone();
   switch (direction)
   {
     case "up":
-      heroCoordinates[1] -= config.heroSpeed;
+      heroCoordinates[1] -= HS;      
       break;
     case "down":
-      heroCoordinates[1] +=  config.heroSpeed;
+      heroCoordinates[1] +=  HS;
       break;
     case "left":
-      heroCoordinates[0] -=  config.heroSpeed;
+      heroCoordinates[0] -=  HS;
       break;
     case "right":
-      heroCoordinates[0] +=  config.heroSpeed;
+      heroCoordinates[0] +=  HS;
       break;
     default:
       break;
@@ -44,76 +44,110 @@ function moveHero(heroCoordinates, heroName, direction)
   heroPosition = document.querySelector('[posX = "' + heroCoordinates[0] + '"][posY = "' + heroCoordinates[1] + '"]');
   createNewAttackZone();
   heroPosition.classList.add(heroName);
+
+  // switch (direction)
+  // {
+  //   case "up":
+  //     heroPosition.style.backgroundImage = "url('../img/firstHero_back.png')";
+  //     break;
+  //   case "down":
+      
+  //     break;
+  //   case "left":
+      
+  //     break;
+  //   case "right":
+      
+  //     break;
+  //   default:
+  //     break;
+  // }
 }
 
 function drawRemainingSteps()
 {
   let remainingSteps = config.step - heroStepCounter;
-  document.getElementsByClassName("step-counter")[0].innerHTML = `Steps remaining:${remainingSteps}`;
+  document.getElementsByClassName("steps-quantity")[0].innerHTML = `${remainingSteps}`;
 }
 
 let heroStepCounter = 0;
 let heroDirection;
+let spawnEnemyTurn = 0;
 
 document.addEventListener("keydown", function(event)
 {
-  heroStepCounter++;
-  if (heroStepCounter <= config.step)
+  if (heroStepCounter + 1 > config.step)
   {
-    drawRemainingSteps();
+    enemiesList.forEach(enemy =>
+    {
+      enemy.selectTarget();
+    }); // enemies turn
+    spawnEnemyTurn++;
+    heroStepCounter = 0; //add new turns to heroes
+    drawRemainingSteps(); // draw step quantity
+    if (spawnEnemyTurn == config.enemySpawnTime)
+    {
+      getSpawnCoordinates();
+      let enemy = new Enemy(getSpawnCoordinates()[0], getSpawnCoordinates()[1]);
+      enemiesList.push(enemy); //create new enemy
+      spawnEnemyTurn = 0;
+    }
   }
   if (heroStepCounter > config.step)
-  {
-    heroDirection = "none";
-      enemiesList.forEach(enemy =>
-      {
-        enemy.selectTarget();
-      }); // enemies turn
-      heroStepCounter = 0; //add new turns to heroes
-      drawRemainingSteps(); // draw step quantity
+  {    
+    heroDirection = "none";    
   }
   else
-  {
+  {    
     if (event.code == "KeyW")
     {
       heroDirection = "up";
       moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;      
     }
     if (event.code == "KeyS")
     {
       heroDirection = "down";
       moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;
     }
     if (event.code == "KeyA")
     {
       heroDirection = "left";
       moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;
     }
     if (event.code == "KeyD")
     {
       heroDirection = "right";
       moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;
     }
     if (event.keyCode == 38)
     {
       heroDirection = "up";
       moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
     }
     if (event.keyCode == 40)
     {
       heroDirection = "down";
       moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
     }
     if (event.keyCode == 37)
     {
       heroDirection = "left";
       moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
     }
     if (event.keyCode == 39)
     {
       heroDirection = "right";
       moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
     }
+    drawRemainingSteps();
   }
 });
 

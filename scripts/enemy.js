@@ -38,8 +38,6 @@ class Enemy
 
   move(targetCoordinates)
   {
-    let speedX = 1;
-    let speedY = 1;
     let currentEnemyPosition = document.querySelector('[posX = "' + this.pos.x + '"][posY = "' + this.pos.y + '"]');
     currentEnemyPosition.classList.remove("enemy");
 
@@ -175,17 +173,9 @@ function getSpawnCoordinates()
     default:
       break;
   }
-
   return currentCoordinates;
 }
 
 let enemiesList = [];
-let enemy = new Enemy(15, 15);
+let enemy = new Enemy(4,2);
 enemiesList.push(enemy);
-
-setInterval(() =>
-{
-  getSpawnCoordinates();
-  let enemy = new Enemy(getSpawnCoordinates()[0], getSpawnCoordinates()[1]);
-  enemiesList.push(enemy);
-}, config.enemySpawnTime);
