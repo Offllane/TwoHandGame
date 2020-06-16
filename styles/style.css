@@ -41,6 +41,21 @@ body {
   z-index: 3;
 }
 
+.firstHero_back-side {
+  background-image: url(../img/firstHero_back.png);
+  background-repeat: no-repeat;
+}
+
+.firstHero_right-side {
+  background-image: url(../img/firstHero_right.png);
+  background-repeat: no-repeat;
+}
+
+.firstHero_left-side {
+  background-image: url(../img/firstHero_left.png);
+  background-repeat: no-repeat;
+}
+
 .secondHero {
   background-image: url(../img/secondHero_front.png);
   background-repeat: no-repeat;
@@ -48,9 +63,9 @@ body {
 }
 
 .enemy {
-  background-image: url(../img/reaper.png);
+  background-image: url(../img/reaper.png) !important;
   background-repeat: no-repeat;
-  z-index: 2;
+  z-index: 3;
 }
 
 .step-counter {
@@ -66,13 +81,12 @@ body {
 .attack-area {
   background-image: url(../img/attack.png);
   background-repeat: no-repeat;
-  /* opacity: .5; */
+  opacity: .5;
   z-index: 2;
 }
 
 .attack-event {
-  background-color: red !important;
-  z-index: 3;
+  opacity: 1;
 }
 
 .score {

@@ -1,3 +1,10 @@
+function clearMovement(heroPosition)
+{
+  heroPosition.classList.remove("firstHero_back-side");
+  heroPosition.classList.remove("firstHero_left-side");
+  heroPosition.classList.remove("firstHero_right-side");
+}
+
 function moveHero(heroCoordinates, heroName, direction)
 {
   let HS = config.heroSpeed;
@@ -5,6 +12,7 @@ function moveHero(heroCoordinates, heroName, direction)
     '[posX = "' + heroCoordinates[0] + '"][posY = "' + heroCoordinates[1] + '"]'
   );
   currentHeroStep.classList.remove(heroName);
+  clearMovement(currentHeroStep);
   let heroPosition;
   if (heroCoordinates[0] == 1 && direction == "left")
   {
@@ -45,23 +53,23 @@ function moveHero(heroCoordinates, heroName, direction)
   createNewAttackZone();
   heroPosition.classList.add(heroName);
 
-  // switch (direction)
-  // {
-  //   case "up":
-  //     heroPosition.style.backgroundImage = "url('../img/firstHero_back.png')";
-  //     break;
-  //   case "down":
-      
-  //     break;
-  //   case "left":
-      
-  //     break;
-  //   case "right":
-      
-  //     break;
-  //   default:
-  //     break;
-  // }
+  switch (direction)
+  {
+    case "up":
+      heroPosition.classList.add("firstHero_back-side");
+      break;
+    case "down":
+      heroPosition.classList.remove("firstHero_back-side");
+      break;
+    case "left":
+      heroPosition.classList.add("firstHero_left-side");
+      break;
+    case "right":
+      heroPosition.classList.add("firstHero_right-side");
+      break;
+    default:
+      break;
+  }
 }
 
 function drawRemainingSteps()
