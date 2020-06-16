@@ -3,6 +3,9 @@ function clearMovement(heroPosition)
   heroPosition.classList.remove("firstHero_back-side");
   heroPosition.classList.remove("firstHero_left-side");
   heroPosition.classList.remove("firstHero_right-side");
+  heroPosition.classList.remove("secondHero_back-side");
+  heroPosition.classList.remove("secondHero_left-side");
+  heroPosition.classList.remove("secondHero_right-side");
 }
 
 function moveHero(heroCoordinates, heroName, direction)
@@ -53,19 +56,45 @@ function moveHero(heroCoordinates, heroName, direction)
   createNewAttackZone();
   heroPosition.classList.add(heroName);
 
-  switch (direction)
-  {
-    case "up":
-      heroPosition.classList.add("firstHero_back-side");
+  switch (heroName) {
+    case "firstHero":
+      switch (direction)
+      {
+        case "up":
+          heroPosition.classList.add("firstHero_back-side");
+          break;
+        case "down":
+          heroPosition.classList.remove("firstHero_back-side");
+          break;
+        case "left":
+          heroPosition.classList.add("firstHero_left-side");
+          break;
+        case "right":
+          heroPosition.classList.add("firstHero_right-side");
+          break;
+        default:
+          break;
+      }
       break;
-    case "down":
-      heroPosition.classList.remove("firstHero_back-side");
-      break;
-    case "left":
-      heroPosition.classList.add("firstHero_left-side");
-      break;
-    case "right":
-      heroPosition.classList.add("firstHero_right-side");
+    
+    case "secondHero":
+      switch (direction)
+      {
+        case "up":
+          heroPosition.classList.add("secondHero_back-side");
+          break;
+        case "down":
+          heroPosition.classList.remove("secondHero_back-side");
+          break;
+        case "left":
+          heroPosition.classList.add("secondHero_left-side");
+          break;
+        case "right":
+          heroPosition.classList.add("secondHero_right-side");
+          break;
+        default:
+          break;
+      }
       break;
     default:
       break;
