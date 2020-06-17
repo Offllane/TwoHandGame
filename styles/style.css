@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  overflow-y: hidden;
 }
 
 .game-area {
@@ -78,7 +79,13 @@ body {
 }
 
 .enemy {
-  background-image: url(../img/reaper.png) !important;
+  background-image: url(../img/reaper.png);
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+.enemy_left-side {
+  background-image: url(../img/reaper_left.png) !important;
   background-repeat: no-repeat;
   z-index: 3;
 }

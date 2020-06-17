@@ -40,6 +40,7 @@ class Enemy
   {
     let currentEnemyPosition = document.querySelector('[posX = "' + this.pos.x + '"][posY = "' + this.pos.y + '"]');
     currentEnemyPosition.classList.remove("enemy");
+    currentEnemyPosition.classList.remove("enemy_left-side");
 
     let direction = "none";
 
@@ -104,6 +105,7 @@ class Enemy
       }
     }
 
+
     switch (direction)
     {
       case "up":
@@ -122,7 +124,15 @@ class Enemy
         break;
     }
     let enemyPosition = document.querySelector('[posX = "' + this.pos.x + '"][posY = "' + this.pos.y + '"]');
-    enemyPosition.classList.add("enemy");
+    if (direction == "left")
+    {
+      enemyPosition.classList.add("enemy_left-side");  
+    }
+    else
+    {
+      enemyPosition.classList.add("enemy");
+    }
+    
   }
 }
 
