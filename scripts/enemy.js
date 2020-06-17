@@ -105,7 +105,6 @@ class Enemy
       }
     }
 
-
     switch (direction)
     {
       case "up":
@@ -133,6 +132,15 @@ class Enemy
       enemyPosition.classList.add("enemy");
     }
     
+    if (enemyPosition.classList.contains("firstHero") || enemyPosition.classList.contains("secondHero"))
+    {
+      config.lifeQuantity--;
+      if (config.lifeQuantity <= 0)
+      {
+        makePopupVisible();
+      }
+      document.getElementsByClassName("lifes")[0].innerHTML = `Life remaining: ${config.lifeQuantity}`;
+    }
   }
 }
 

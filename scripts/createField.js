@@ -9,6 +9,10 @@ else
   areaSize = window.innerWidth / 2;
 }
 
+let popup = document.getElementsByClassName("popup")[0];
+popup.style.height = window.innerHeight;
+popup.style.width = window.innerWidth;
+
 let gameArea = document.createElement("section");
 gameArea.classList.add("game-area");
 gameArea.style.width = areaSize +'px';

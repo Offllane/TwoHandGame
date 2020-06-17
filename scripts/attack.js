@@ -91,11 +91,12 @@ document.addEventListener("keydown", function (event) {
   {    
     attackZoneFieldsList.forEach(element => {
       element.classList.add("attack-event");
-      if (element.classList.contains("enemy"))
+      if (element.classList.contains("enemy") || element.classList.contains("enemy_left-side"))
       {        
         let deadenemy = enemiesList.findIndex(enemy => enemy.pos.x == element.getAttribute("posx") && enemy.pos.y == element.getAttribute("posy"));
         enemiesList.splice(deadenemy, 1);
         element.classList.remove("enemy");
+        element.classList.remove("enemy_left-side");
         document.getElementsByClassName("score")[0].innerHTML = `Your score is: ${points}`; 
         points++;
       }

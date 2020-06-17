@@ -8,14 +8,24 @@
 <link rel="stylesheet" href="styles/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 <body>
+  <section class="popup">
+    <section class="loose-image"></section>
+    <section class="popup-score"> Your score is: 0</section>
+    <section class="under-button"> Try again</section>
+    <button onclick="window.location.reload()" class="button-reload"></button>
+  </section>
   <section class="step-counter">
     Enemy turn in: <span class="steps-quantity"></span>
   </section>   
-  <section class="score"> Your score is:</section> <br>
+  <section class="main-inform">
+    <section class="score"> Your score is: 0</section>
+    <section class ="lifes"> Lifes remainig: 10</section>
+  </section>  
   <script src="scripts/config.js"></script>
-  <script src="scripts/createField.js"></script>    
+  <script src="scripts/createField.js"></script> 
+  <script src="scripts/popup.js"></script>
   <script src="scripts/enemy.js"></script>
   <script src="scripts/attack.js"></script>
-  <script src="scripts/move.js"></script>
+  <script src="scripts/move.js"></script>  
 </body>
 </html>
