@@ -5,9 +5,10 @@
 }
 
 body {
-  background-image: url(../img/Preview_2D_RPG_Desert_Tileset.png);
   background-repeat: no-repeat;
-  object-fit: cover;
+  background-position: center center;
+  background-size: 100%;
+  object-fit: contain;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

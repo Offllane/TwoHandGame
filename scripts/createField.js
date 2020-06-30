@@ -1,3 +1,17 @@
+const backgroundPath = "../img/backgrounds/";
+// let backgroundsName = ["bluemoon.png", "Cavern.svg", "cityskyline.png", "darkForest.jpg", "forest.png", "swamp.jpg", "desert.png"];
+let backgroundsName = ["desert.png"];
+
+function setNewBackground() {
+  let randomBackgroundIndex = Math.floor(Math.random() * backgroundsName.length);
+  let randomBackground = backgroundsName[randomBackgroundIndex];
+  let backgroundStyle = backgroundPath + randomBackground;
+  console.log(backgroundStyle);
+  document.body.style.backgroundImage = `url('${backgroundStyle}')`;
+}
+
+setNewBackground();
+
 let areaSize;
 
 if (window.innerHeight < window.innerWidth / 2)
