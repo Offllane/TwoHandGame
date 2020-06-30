@@ -1,4 +1,4 @@
-const backgroundPath = "../img/backgrounds/";
+const backgroundPath = "img/backgrounds/";
 // let backgroundsName = ["bluemoon.png", "Cavern.svg", "cityskyline.png", "darkForest.jpg", "forest.png", "swamp.jpg", "desert.png"];
 let backgroundsName = ["desert.png"];
 
