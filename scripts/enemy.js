@@ -273,6 +273,6 @@ function getSpawnCoordinates()
   return currentCoordinates;
 }
 
-let enemiesList = [];
+let enemiesList = []; //will be contain all enemies
 let enemy = new Enemy(4, 2);
 enemiesList.push(enemy);
