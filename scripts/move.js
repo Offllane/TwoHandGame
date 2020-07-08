@@ -12,7 +12,7 @@ function clearMovement(heroPosition)
 
 function moveHero(heroCoordinates, heroName, direction)
 {
-  let HS = config.heroSpeed;
+  let heroSpeed = config.heroSpeed;
   let currentHeroStep = document.querySelector(
     '[posX = "' + heroCoordinates[0] + '"][posY = "' + heroCoordinates[1] + '"]'
   );
@@ -20,35 +20,35 @@ function moveHero(heroCoordinates, heroName, direction)
   let heroPosition;
   if (heroCoordinates[0] == 1 && direction == "left")
   {
-    HS = 0;
+    heroSpeed = 0;
   }
   if (heroCoordinates[0] == 30 && direction == "right")
   {
-     HS = 0;
+     heroSpeed = 0;
   }
   if (heroCoordinates[1] == 1 && direction == "up")
   {
-     HS = 0;
+     heroSpeed = 0;
   }
   if (heroCoordinates[1] == 30 && direction == "down")
   {
-     HS = 0;
+     heroSpeed = 0;
   }
 
   clearAttackZone();
   switch (direction)
   {
     case "up":
-      heroCoordinates[1] -= HS;      
+      heroCoordinates[1] -= heroSpeed;      
       break;
     case "down":
-      heroCoordinates[1] +=  HS;
+      heroCoordinates[1] +=  heroSpeed;
       break;
     case "left":
-      heroCoordinates[0] -=  HS;
+      heroCoordinates[0] -=  heroSpeed;
       break;
     case "right":
-      heroCoordinates[0] +=  HS;
+      heroCoordinates[0] +=  heroSpeed;
       break;
     default:
       break;
@@ -118,7 +118,7 @@ document.addEventListener("keydown", function(event)
   {
     enemiesList.forEach(enemy =>
     {
-      enemy.selectTarget();
+      enemy.move(enemy.selectTarget());
     }); // enemies turn
     spawnEnemyTurn++;
     heroStepCounter = 0; //add new turns to heroes

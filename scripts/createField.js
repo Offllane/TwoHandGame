@@ -3,8 +3,7 @@
  */
 
 const backgroundPath = "img/backgrounds/"; // use to make relative path for images
-let backgroundsName = ["bluemoon.png", "Cavern.svg", "cityskyline.png", "darkForest.jpg", "forest.png", "desert.png"]; // array with backgrounds images
-// let areaSize;
+let backgroundsName = ["bluemoon.png", "Cavern.svg", "cityskyline.png", "darkForest.jpg", "forest.png", "desert.png"];
 
 
 /**
@@ -54,14 +53,14 @@ let areaSize = setAreaSize();
  */
 function createGameArea(areaSize)
 {
-  let gameArea = document.createElement("section");
+  let gameArea = document.createElement("section"); //game area
   gameArea.classList.add("game-area");
   gameArea.style.width = areaSize + 'px';
   gameArea.style.height = areaSize + 'px';
   gameArea.style.backgroundSize = areaSize / 30 + 'px';
   document.body.appendChild(gameArea);
 
-  for (let i = 0; i < 900; i++)
+  for (let i = 0; i < 900; i++) //add fields to game area
   {
     let field = document.createElement("div");
     field.classList.add("field");
