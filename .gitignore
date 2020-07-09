@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+media/*
+out/*
+venv/*
+db.sqlite3
+manage.py
+game/*
+TwoHandGame/*
+manage.py
+db.sqlite3
+
