@@ -15,4 +15,5 @@ TwoHandGame/*
 manage.py
 db.sqlite3
 .jsbeautifyrc
+.vscode
 
