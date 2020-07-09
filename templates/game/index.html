@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TwoHandGame</title>
 </head>
-<link rel="stylesheet" href="styles/style.css">
-<link rel="stylesheet" href="styles/popup.css">
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+<link rel="stylesheet" href="{% static 'styles/popup.css' %}">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 <body>
@@ -26,13 +28,13 @@
     <p style="margin-top: 20px;">
       <div class="b-container">
         Help
-        <a href="javascript:PopUpShow()"><img style="width:25px; height: 25px;" src="img/question.png" alt=""></a>
+        <a href="javascript:PopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}" alt=""></a>
       </div>
       <div class="b-popup" id="popup1">
         <div class="b-popup-content">
           <section class="popup-header">
             Help
-            <a class="popup-cancel" href="javascript:PopUpHide()"><img class="popup-cancel-image" src="img/close.png" alt=""></a>
+            <a class="popup-cancel" href="javascript:PopUpHide()"><img class="popup-cancel-image" src="{% static 'img/close.png' %}" alt=""></a>
           </section>
           <section>
             <p style="font-weight: bold;">Controls</p>
@@ -54,12 +56,12 @@
     </p>
   </section>
   <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
-  <script src="scripts/config.js"></script>
-  <script src="scripts/createField.js"></script>
-  <script src="scripts/popup.js"></script>
-  <script src="scripts/enemy.js"></script>
-  <script src="scripts/attack.js"></script>
-  <script src="scripts/move.js"></script>
+  <script src="{% static 'scripts/config.js' %}"></script>
+  <script src="{% static 'scripts/createField.js' %}"></script>
+  <script src="{% static 'scripts/popup.js' %}"></script>
+  <script src="{% static 'scripts/enemy.js' %}"></script>
+  <script src="{% static 'scripts/attack.js' %}"></script>
+  <script src="{% static 'scripts/move.js' %}"></script>
 </body>
 
 </html>

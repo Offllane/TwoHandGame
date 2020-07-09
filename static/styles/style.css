@@ -141,7 +141,7 @@ body {
 
 .step-counter {
   background-color: white;
-  width: 15%;   
+  width: 15%;
   margin-top: 20px;
   margin-right: 30px;
   padding: 20px;
@@ -155,7 +155,6 @@ body {
 .attack-area {
   background-image: url(../img/attack-field.png);
   background-repeat: no-repeat;
-  background-position: top;
   opacity: .5;
   z-index: 2;
 }
