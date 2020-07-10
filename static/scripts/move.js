@@ -193,7 +193,7 @@ let heroDirection = "none";
 /**
  * @function movementButtonController
  * @memberof MovementFunctions
- * @description
+ * @description Event listener for move buttons
  */
 document.addEventListener("keydown", function(event)
 {
