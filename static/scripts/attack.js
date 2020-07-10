@@ -155,7 +155,7 @@ let points = 1;
 function addPoints(quantity)
 {
   document.getElementsByClassName("score")[0].innerHTML = `Your score is: ${points}`;
-  point += quantity;
+  points += quantity;
 }
 
 
