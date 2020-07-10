@@ -1,3 +1,13 @@
+/**
+ * @namespace MovementFunctions
+ */
+
+/**
+ * Remove all hero pictures from field
+ * @memberof MovementFunctions
+ * @param {Element} heroPosition - current hero position
+ */
+
 function clearMovement(heroPosition)
 {
   heroPosition.classList.remove("firstHero_back-side");
@@ -10,6 +20,14 @@ function clearMovement(heroPosition)
   heroPosition.classList.remove("secondHero");
 }
 
+
+/**
+ * Replace hero picture
+ * @memberof MovementFunctions
+ * @param {array} heroCoordinates - two hero coordinates 
+ * @param {string} heroName 
+ * @param {string} direction 
+ */
 function moveHero(heroCoordinates, heroName, direction)
 {
   let heroSpeed = config.heroSpeed;
