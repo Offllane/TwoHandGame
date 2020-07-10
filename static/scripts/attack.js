@@ -49,7 +49,7 @@ function findYCoordinate(x)
  */
 function removeAttackArea(x, y)
 {
-  let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
+  let currentAttackPosition = findField(x, y);
   currentAttackPosition.classList.remove("attack-area");
 }
 
@@ -102,7 +102,7 @@ function clearAttackZone()
  */
 function addAttackArea(x, y)
 {
-  let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
+  let currentAttackPosition = findField(x,y);
   currentAttackPosition.classList.add("attack-area");
   attackZoneFieldsList.push(currentAttackPosition);
 }
