@@ -5,7 +5,9 @@ from django.shortcuts import render, redirect
 from game.forms import UserRegistrationForm, LoginForm
 from game.models import  CustomUser
 
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/login")
 def index(request):
     players = CustomUser.objects.all()
     return render(request,'game/index.html', {'players':players})
