@@ -180,8 +180,10 @@ function isLastStep()
     drawRemainingSteps(); // draw step quantity
     if (spawnEnemyTurn == config.enemySpawnTime)
     {
-      getSpawnCoordinates();
-      let enemy = new Enemy(getSpawnCoordinates()[0], getSpawnCoordinates()[1]);
+      let enemyCoordinate = getSpawnCoordinates();
+      let enemy = new Enemy(enemyCoordinate[0], enemyCoordinate[1]);
+      // console.log(enemyCoordinate[0], enemyCoordinate[1]);
+      // enemy.addToArea;
       enemiesList.push(enemy); //create new enemy
       spawnEnemyTurn = 0;
     }
@@ -196,8 +198,7 @@ let heroDirection = "none";
  * @description Event listener for move buttons
  */
 document.addEventListener("keydown", function(event)
-{
-  isLastStep();
+{  
   if (event.code == "KeyW")
   {
     heroDirection = "up";
@@ -241,6 +242,7 @@ document.addEventListener("keydown", function(event)
   }
   heroStepCounter++;
   drawRemainingSteps();
+  isLastStep();
 });
 
 moveHero(firstHeroCoordinates, "firstHero"); //first turn generate
