@@ -15,6 +15,13 @@
 
 {% block content %}
 <body>
+{% if request.user.is_authenticated %}
+    Hello {{ request.user }}
+
+{% else %}
+    NOT WORK
+{% endif %}
+
   <section class="popup">
     <section class="loose-image"></section>
     <section class="popup-score"> Your score is: 0</section>
@@ -58,7 +65,7 @@
     </p>
       <section>Top players</section>
         {% for player in players %}
-            <section>{{ player.nickname }} - {{ player.score }}</section>
+            <section>{{ player.username }} - {{ player.score }}</section>
         {% endfor %}
   </section>
   <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>

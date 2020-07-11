@@ -133,7 +133,7 @@ class Enemy
    */
   findCurrentPosition()
   {
-    return findField(this.pos.x, this.pos.y);
+    return document.querySelector('[posX = "' + this.pos.x + '"][posY = "' + this.pos.y + '"]');
   }
 
   /**
@@ -190,7 +190,7 @@ class Enemy
    */
   move(targetCoordinates)
   {
-    this.clearField();
+    this.clearField()
     let direction = this.setDirection(targetCoordinates);
 
     switch (direction) // replace position 
@@ -218,7 +218,7 @@ class Enemy
 
 function getRandomHeroCoordinates()
 {
-  let coordinates = [];
+  let coordinates = new Array();
   if (Math.random() >= 0.5)
   {
     coordinates.push(firstHeroCoordinates[0]);
