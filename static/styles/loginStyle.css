@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+body {
+  background-color: #000300;
+  height: 100%;
+}
+
+.demon-face {
+  position: absolute;
+  height:250px;
+  width:250px;
+  /* background-image: url('../img/loginPage/CloseEyes.png');
+  background-size: 300px; */
+}
+
+.human-face {
+  position:absolute;
+  right: 0;
+}
+
+.close-eyes{
+  display: block;
+}
+
+.open-eyes{
+  display:none;
+}
+
+.main {
+  width:100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-window{
+  width: 400px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: grey;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.input-lines{
+  height: 30px;
+  padding-bottom: 25px;
+  display: flex;
+}
+
+.login-image {
+  height: 28px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+
+.enter-button{
+ cursor: pointer;
+ margin-bottom: 15px;
+}
+
+.enter-button-img {
+  width:20px;
+  object-fit: contain;
+}
