@@ -1,11 +1,13 @@
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 from game.forms import UserRegistrationForm, LoginForm
 from game.models import  CustomUser
 
 from django.contrib.auth.decorators import login_required
+
 
 @login_required(login_url="/login")
 def index(request):
@@ -48,4 +50,19 @@ def register(request):
 
 def logoutUser(request):
     logout(request)
+    return redirect('index')
+
+
+@csrf_exempt
+def update_score(request):
+    if request.method == 'POST':
+        data = request.POST['score']
+        print('Score:', data)
+        player = CustomUser.objects.get(username=request.user)
+        print('Player:', player)
+        if int(data) > int(player.score):
+            player.score = data
+            player.save()
+        print('Score player:', player.score)
+        return redirect('index')
     return redirect('index')
