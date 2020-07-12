@@ -1,7 +1,7 @@
 * {
   margin: 0;
   font-family: 'Roboto';
-  font-size: 20px;
+  font-size: 30px;
 }
 
 body {
@@ -34,6 +34,7 @@ body {
   position:absolute;
   left:10%;
   display: none;
+  opacity: 0.5;
 }
 
 .human-attack {
@@ -41,6 +42,7 @@ body {
   left:50%;
   top:45%;
   display: none;
+  opacity: 0.5;
 }
 
 .attack {
@@ -51,6 +53,7 @@ body {
   margin-left: -300px;
   left:40%;
   display: none;
+  opacity: 0.5;
 }
 
 .main {

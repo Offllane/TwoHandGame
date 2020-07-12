@@ -29,29 +29,30 @@
   <img class="attack" src="{% static 'img\loginPage\attackTogether.png'%}">
 
   <main class="main">
-    <section class="main-window">
+    <form method="POST" action="" class="main-window">
+      {% csrf_token %}
       <section class="title">Login</section>
 
       <section class="input-lines">
         <img src="{% static 'img\loginPage\sagesHead.png'%}" alt="" class="login-image">
-        <input id="name-input" type="text" class="input-field" placeholder="Name">
+        <input id="name-input" type="text" name="username" class="input-field" placeholder="Name">
       </section>
 
       <section class="input-lines">
         <img src="{% static 'img\loginPage\shield.png'%}" alt="" class="login-image">
-        <input id="password-input" type="text" class="input-field" placeholder="Password">
+        <input id="password-input" type="password" name="password" class="input-field" placeholder="Password">
       </section>
 
-      <button class="enter-button">
-        Enter
-      </button>
+      <input class="enter-button" type="submit" value="Enter"></input>
 
       <section class="register">Don't have an account?
-        <a class="register-link" href="#"> Register</a>
+        <a class="register-link" href="{% url 'register' %}"> Register</a>
       </section>
 
-    </section>
+    </form>
   </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script>
     function openEyes()
