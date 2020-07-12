@@ -156,6 +156,14 @@ function addPoints(quantity)
 {
   document.getElementsByClassName("score")[0].innerHTML = `Your score is: ${points}`;
   points += quantity;
+
+  $.ajax({
+    url: 'update_score/',
+    type: 'POST',
+    data: {'score': points},
+    dataType: 'text',
+    cache: false
+  })
 }
 
 
