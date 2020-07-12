@@ -6,15 +6,15 @@
 
 body {
   background-color: #000300;
-  height: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .demon-face {
   position: absolute;
   height:250px;
   width:250px;
-  /* background-image: url('../img/loginPage/CloseEyes.png');
-  background-size: 300px; */
 }
 
 .human-face {
@@ -28,6 +28,29 @@ body {
 
 .open-eyes{
   display:none;
+}
+
+.demon-attack {
+  position:absolute;
+  left:10%;
+  display: none;
+}
+
+.human-attack {
+  position:absolute;
+  left:50%;
+  top:45%;
+  display: none;
+}
+
+.attack {
+  position: absolute;
+  object-fit: contain;
+  display: block;
+  margin-top: 100px;
+  margin-left: -300px;
+  left:40%;
+  display: none;
 }
 
 .main {
@@ -47,6 +70,7 @@ body {
   flex-direction: column;
   background-color: grey;
   border-radius: 10px;
+  z-index: 1;
 }
 
 .title {

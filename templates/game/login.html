@@ -13,72 +13,116 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 <body>
+
   <section class="demon-face">
     <img class="close-eyes" src="{% static 'img\loginPage\CloseEyesDemon.png'%}">
     <img class="open-eyes" src="{% static 'img\loginPage\OpenEyesDemon.png'%}">
   </section>
+
   <section class="human-face">
     <img class="close-eyes" src="{% static 'img\loginPage\CloseEyesHuman.png'%}">
     <img class="open-eyes" src="{% static 'img\loginPage\OpenEyesHuman.png'%}">
   </section>
+
+  <img class="demon-attack" src="{% static 'img\loginPage\demonAttack.png'%}">
+  <img class="human-attack" src="{% static 'img\loginPage\humanAttack.png'%}">
+  <img class="attack" src="{% static 'img\loginPage\attackTogether.png'%}">
+
   <main class="main">
     <section class="main-window">
       <section class="title">Login</section>
+
       <section class="input-lines">
         <img src="{% static 'img\loginPage\sagesHead.png'%}" alt="" class="login-image">
         <input id="name-input" type="text" class="input-field" placeholder="Name">
       </section>
+
       <section class="input-lines">
         <img src="{% static 'img\loginPage\shield.png'%}" alt="" class="login-image">
-        <input type="text" class="input-field" placeholder="Password">
+        <input id="password-input" type="text" class="input-field" placeholder="Password">
       </section>
-      <button class="enter-button">        
+
+      <button class="enter-button">
         Enter
       </button>
+
       <section class="register">Don't have an account?
         <a class="register-link" href="#"> Register</a>
       </section>
+
     </section>
   </main>
 
   <script>
-    const nameInput = document.getElementById("name-input");    
-
-    function openEyes() {
-      for(let i = 0; i<2; i++)
+    function openEyes()
+    {
+      for (let i = 0; i < 2; i++)
       {
         let closeEyesPicture = document.getElementsByClassName("close-eyes")[i];
         closeEyesPicture.style.display = "none";
-        
+
         let openEyesPicture = document.getElementsByClassName("open-eyes")[i];
         openEyesPicture.style.display = "block";
       }
-    } 
+    }
 
-    function closeEyes() {
-      for(let i = 0; i<2; i++)
+    function closeEyes()
+    {
+      for (let i = 0; i < 2; i++)
       {
         let closeEyesPicture = document.getElementsByClassName("close-eyes")[i];
         closeEyesPicture.style.display = "block";
-        
+
         let openEyesPicture = document.getElementsByClassName("open-eyes")[i];
         openEyesPicture.style.display = "none";
       }
     }
 
-    function randomInteger(min, max) {
-    // случайное число от min до (max+1)
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
+    function randomInteger(min, max)
+    {
+      // случайное число от min до (max+1)
+      let rand = min + Math.random() * (max + 1 - min);
+      return Math.floor(rand);
     }
 
-    openEyes();
-   setInterval(()=>{
-     closeEyes();
-     setTimeout(() => {
-       openEyes();
-     }, 300);
-   }, randomInteger(3500, 6000));
+    openEyes(); // моргание
+    setInterval(() =>
+    {
+      closeEyes();
+      setTimeout(() =>
+      {
+        openEyes();
+      }, 300);
+    }, randomInteger(3500, 6000));
+
+    function singleAttack()
+    {
+      document.getElementsByClassName("demon-attack")[0].style.display = "block";
+      document.getElementsByClassName("human-attack")[0].style.display = "block";
+    }
+
+    function cancellationSingleAttack()
+    {
+      document.getElementsByClassName("demon-attack")[0].style.display = "none";
+      document.getElementsByClassName("human-attack")[0].style.display = "none";
+    }
+
+    function bothAttack()
+    {
+      document.getElementsByClassName("attack")[0].style.display = "block";
+    }
+
+    function cancellationBothAttack() {
+      document.getElementsByClassName("attack")[0].style.display = "none";
+    }
+
+    const nameInput = document.getElementById("name-input");    
+    nameInput.addEventListener("focusin", singleAttack);
+    nameInput.addEventListener("focusout", cancellationSingleAttack);
+
+    const passwordInput = document.getElementById("password-input");
+    passwordInput.addEventListener("focusin", bothAttack);
+    passwordInput.addEventListener("focusout", cancellationBothAttack);
   </script>
 </body>
 
