@@ -160,10 +160,10 @@ function addPoints(quantity)
   $.ajax({
     url: 'update_score/',
     type: 'POST',
-    data: {'score': points},
+    data: { 'score': points },
     dataType: 'text',
     cache: false
-  })
+  });
 }
 
 
