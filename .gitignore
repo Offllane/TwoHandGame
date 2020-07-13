@@ -6,7 +6,7 @@ __pycache__/
 media/*
 out/*
 .idea/*
-.sqlite3
+db.sqlite3
 .vscode
 .jsbeautifyrc
 
