@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -27,9 +28,9 @@ def user_login(request):
                     login(request, user)
                     return redirect('index')
                 else:
-                    return HttpResponse('Disable account')
+                    messages.info(request,'Incorrect username of password')
             else:
-                return HttpResponse('Invalid login')
+                messages.info (request, 'Incorrect username of password')
     else:
         form = LoginForm()
     return render(request, 'game/login.html', {'form' : form})

@@ -5,6 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game login</title>
+
+   <style>
+   #messages{
+			background-color: grey;
+			color: darkred;
+			padding: 5px;
+			margin-top: 5px;
+		}
+	</style>
+
+
 </head>
 
 {% load static %}
@@ -44,6 +55,10 @@
       </section>
 
       <input class="enter-button" type="submit" value="Enter"></input>
+
+        {% for message in messages %}
+					<p id="messages">{{message}}</p>
+        {% endfor %}
 
       <section class="register">Don't have an account?
         <a class="register-link" href="{% url 'register' %}"> Register</a>
