@@ -28,9 +28,9 @@ def user_login(request):
                     login(request, user)
                     return redirect('index')
                 else:
-                    messages.info(request,'Invalid username of password')
+                    messages.info(request,'Invalid username or password')
             else:
-                messages.info (request, 'Invalid username of password')
+                messages.info (request, 'Invalid username or password')
     else:
         form = LoginForm()
     return render(request, 'game/login.html', {'form' : form})

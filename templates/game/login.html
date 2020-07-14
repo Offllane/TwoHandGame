@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game login</title>
-
-   <style>
-   #messages{
-			background-color: grey;
-			color: darkred;
-			padding: 5px;
-			margin-top: 5px;
-		}
-	</style>
-
-
+  <title>Game login</title>  
 </head>
-
-{% load static %}
 
 <link rel="stylesheet" href="{% static 'styles/loginStyle.css' %}">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -56,9 +45,9 @@
 
       <input class="enter-button" type="submit" value="Enter"></input>
 
-        {% for message in messages %}
-					<p id="messages">{{message}}</p>
-        {% endfor %}
+      {% for message in messages %}
+      <p id="messages">{{message}}</p>
+      {% endfor %}
 
       <section class="register">Don't have an account?
         <a class="register-link" href="{% url 'register' %}"> Register</a>
@@ -70,10 +59,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script>
-    function openEyes()
-    {
-      for (let i = 0; i < 2; i++)
-      {
+    function openEyes() {
+      for (let i = 0; i < 2; i++) {
         let closeEyesPicture = document.getElementsByClassName("close-eyes")[i];
         closeEyesPicture.style.display = "none";
 
@@ -82,10 +69,8 @@
       }
     }
 
-    function closeEyes()
-    {
-      for (let i = 0; i < 2; i++)
-      {
+    function closeEyes() {
+      for (let i = 0; i < 2; i++) {
         let closeEyesPicture = document.getElementsByClassName("close-eyes")[i];
         closeEyesPicture.style.display = "block";
 
@@ -94,37 +79,31 @@
       }
     }
 
-    function randomInteger(min, max)
-    {
+    function randomInteger(min, max) {
       // случайное число от min до (max+1)
       let rand = min + Math.random() * (max + 1 - min);
       return Math.floor(rand);
     }
 
     openEyes(); // моргание
-    setInterval(() =>
-    {
+    setInterval(() => {
       closeEyes();
-      setTimeout(() =>
-      {
+      setTimeout(() => {
         openEyes();
       }, 300);
     }, randomInteger(3500, 6000));
 
-    function singleAttack()
-    {
+    function singleAttack() {
       document.getElementsByClassName("demon-attack")[0].style.display = "block";
       document.getElementsByClassName("human-attack")[0].style.display = "block";
     }
 
-    function cancellationSingleAttack()
-    {
+    function cancellationSingleAttack() {
       document.getElementsByClassName("demon-attack")[0].style.display = "none";
       document.getElementsByClassName("human-attack")[0].style.display = "none";
     }
 
-    function bothAttack()
-    {
+    function bothAttack() {
       document.getElementsByClassName("attack")[0].style.display = "block";
     }
 
@@ -132,7 +111,7 @@
       document.getElementsByClassName("attack")[0].style.display = "none";
     }
 
-    const nameInput = document.getElementById("name-input");    
+    const nameInput = document.getElementById("name-input");
     nameInput.addEventListener("focusin", singleAttack);
     nameInput.addEventListener("focusout", cancellationSingleAttack);
 
