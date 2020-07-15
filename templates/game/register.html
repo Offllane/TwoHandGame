@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration</title>
 </head>
+{% block context %}
 
-<link rel="stylesheet" href="{% static 'styles/loginStyle.css' %}">
 <link rel="stylesheet" href="{% static 'styles/registerStyle.css' %}">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
@@ -17,16 +17,32 @@
   <main class="main">
     <form method="POST" class="main-window" enctype="multipart/form-data">
       
+      {% csrf_token %}
+      
+
       <section class="title">Registration</section>
 
+      {% for field in upload_form %}
       <section class="input-lines">
-        <!-- <img src="{% static 'img\loginPage\sagesHead.png'%}" alt="" class="login-image"> -->
-        <input id="name-input" type="text" name="username" class="input-field" placeholder="Name">
+        <img src="{% static 'img\registrationPage\face.png'%}" alt="" class="register-image">
+        {{ field.label }}
+        {{ field }}
+        {# <input id="name-input" type="text" name="username" class="input-field" placeholder="Username"> #}
       </section>
+      {% endfor %}
+
+      {% for field in user_form %}
+      <section class="input-lines">
+        <img src="{% static 'img\registrationPage\password.png'%}" alt="" class="register-image">
+        {{ field.label }}
+        {{ field }}
+        {# <input id="password-input" type="password" name="password" class="input-field" placeholder="Password"> #}        
+      </section>
+      {% endfor %}
 
       <section class="input-lines">
-        <!-- <img src="{% static 'img\loginPage\shield.png'%}" alt="" class="login-image"> -->
-        <input id="password-input" type="password" name="password" class="input-field" placeholder="Password">
+        <img src="{% static 'img\registrationPage\repeatPassword.png'%}" alt="" class="register-image">
+        <input id="password-input" type="password" name="password" class="input-field" placeholder="Repeat password">
       </section>
 
       <input class="enter-button" type="submit" value="Register"></input>      
@@ -35,8 +51,13 @@
         <a class="register-link" href="{% url 'login' %}"> Sign in</a>
       </section>
 
+      {# {% for message in messages %} #}
+      {# <p id="messages">{{message}} </p>#}
+      {# {% endfor %} #}
+
     </form>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
+{% endblock %}
 </html>
