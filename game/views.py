@@ -43,8 +43,11 @@ def register(request):
             new_user = user_form.save(commit = False)
             new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
-            login(request,new_user)
+            login (request, new_user)
             return redirect('index')
+        else:
+            messages.info (request, 'Invalid username or password')
+            return render (request, 'game/register.html', {'upload_form': user_form})
     else:
         user_form = UserRegistrationForm()
         return render(request, 'game/register.html', {'upload_form':user_form})

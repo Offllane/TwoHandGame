@@ -24,36 +24,28 @@
 
       {% for field in upload_form %}
       <section class="input-lines">
-        <img src="{% static 'img\registrationPage\face.png'%}" alt="" class="register-image">
-        {{ field.label }}
+        {% if field.label == 'Username' %}
+          <img src="{% static 'img\registrationPage\face.png'%}" alt="" class="register-image">
+        {% elif field.label == 'Password' %}
+          <img src="{% static 'img\registrationPage\password.png'%}" alt="" class="register-image">
+        {% elif field.label == 'Repeat password' %}
+          <img src="{% static 'img\registrationPage\repeatPassword.png'%}" alt="" class="register-image">
+        {% endif %}
         {{ field }}
-        {# <input id="name-input" type="text" name="username" class="input-field" placeholder="Username"> #}
       </section>
       {% endfor %}
 
-      {% for field in user_form %}
-      <section class="input-lines">
-        <img src="{% static 'img\registrationPage\password.png'%}" alt="" class="register-image">
-        {{ field.label }}
-        {{ field }}
-        {# <input id="password-input" type="password" name="password" class="input-field" placeholder="Password"> #}        
-      </section>
+      <input class="enter-button" type="submit" value="Register"/>
+
+      {% for message in messages %}
+        <p id="messages">{{message}}</p>
       {% endfor %}
-
-      <section class="input-lines">
-        <img src="{% static 'img\registrationPage\repeatPassword.png'%}" alt="" class="register-image">
-        <input id="password-input" type="password" name="password" class="input-field" placeholder="Repeat password">
-      </section>
-
-      <input class="enter-button" type="submit" value="Register"></input>      
 
       <section class="register">Already have an account?
         <a class="register-link" href="{% url 'login' %}"> Sign in</a>
       </section>
 
-      {# {% for message in messages %} #}
-      {# <p id="messages">{{message}} </p>#}
-      {# {% endfor %} #}
+
 
     </form>
   </main>
