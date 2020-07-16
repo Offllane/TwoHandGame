@@ -24,7 +24,7 @@ body {
 
 .main-window {
   width: 400px;
-  height: 300px;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,6 +38,7 @@ body {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
+  margin-top:15px;
 }
 
 .input-lines {
@@ -50,4 +51,17 @@ body {
   height: 28px;
   object-fit: contain;
   margin-right: 5px;
+}
+
+.register-button {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.register {
+  margin-bottom: 15px;
+}
+
+#messages {
+  color: darkred;
 }

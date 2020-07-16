@@ -46,7 +46,7 @@ def register(request):
             login (request, new_user)
             return redirect('index')
         else:
-            messages.info (request, 'Invalid username or password')
+            messages.info (request, 'Wrong repeat!')
             return render (request, 'game/register.html', {'upload_form': user_form})
     else:
         user_form = UserRegistrationForm()
