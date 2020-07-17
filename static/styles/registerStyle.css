@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 20px;
+}
+
+body {
+  background-color: #000300;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/backgrounds/desert.png);
+  background-size: cover;
+  
+}
+
+.main-window {
+  width: 400px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: grey;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-top:15px;
+}
+
+.input-lines {
+  height: 30px;
+  padding-bottom: 25px;
+  display: flex;
+}
+
+.register-image {
+  height: 28px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+
+.register-button {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.register {
+  margin-bottom: 15px;
+}
+
+#messages {
+  color: darkred;
+}

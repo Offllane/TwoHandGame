@@ -103,16 +103,6 @@ function setCoordinates()
 }
 setCoordinates();
 
-/**
- * Find field with given coordinates
- * @param {int} x - x coordinate
- * @param {int} y - y coordinate
- * @return {Element} - DOM element(field of game zone)
- */
-function findField(x,y) {
-  return document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
-}
-
 
 const popup = document.getElementsByClassName("popup")[0];
 popup.style.height = window.innerHeight;

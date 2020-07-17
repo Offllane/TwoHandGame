@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 20px;
+}
+
+body {
+  background-color: #000300;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.demon-face {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+}
+
+.human-face {
+  position: absolute;
+  right: 0;
+}
+
+.close-eyes {
+  display: block;
+}
+
+.open-eyes {
+  display: none;
+}
+
+.demon-attack {
+  position: absolute;
+  left: 10%;
+  display: none;
+  opacity: 0.5;
+}
+
+.human-attack {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  display: none;
+  opacity: 0.5;
+}
+
+.attack {
+  position: absolute;
+  object-fit: contain;
+  display: block;
+  margin-top: 100px;
+  margin-left: -300px;
+  left: 40%;
+  display: none;
+  opacity: 0.5;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-window {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: grey;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.input-lines {
+  height: 30px;
+  padding-bottom: 25px;
+  display: flex;
+}
+
+.login-image {
+  height: 28px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+
+.enter-button {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.enter-button-img {
+  width: 20px;
+  object-fit: contain;
+}
+
+#messages {
+  color: darkred;
+}

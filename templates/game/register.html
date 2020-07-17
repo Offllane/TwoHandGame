@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+</head>
+{% block context %}
+
+<link rel="stylesheet" href="{% static 'styles/registerStyle.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<body>
+  <main class="main">
+    <form method="POST" class="main-window" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+
+      <section class="title">Registration</section>
+
+      {% for field in upload_form %}
+      <section class="input-lines">
+        {% if field.label == 'Username' %}
+        <img src="{% static 'img\registrationPage\face.png'%}" alt="" class="register-image">
+        {% elif field.label == 'Password' %}
+        <img src="{% static 'img\registrationPage\password.png'%}" alt="" class="register-image">
+        {% elif field.label == 'Repeat password' %}
+        <img src="{% static 'img\registrationPage\repeatPassword.png'%}" alt="" class="register-image">
+        {% endif %}
+        {{ field }}
+      </section>
+      {% endfor %}
+
+      <input class="register-button" type="submit" value="Register" />
+
+      {% for message in messages %}
+      <p id="messages">{{message}}</p>
+      {% endfor %}
+
+      <section class="register">Already have an account?
+        <a class="register-link" href="{% url 'login' %}"> Sign in</a>
+      </section>
+
+    </form>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+{% endblock %}
+
+</html>

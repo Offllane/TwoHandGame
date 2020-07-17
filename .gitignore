@@ -2,18 +2,12 @@
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
 
+venv/*
 media/*
 out/*
-venv/*
+.idea/*
 db.sqlite3
-manage.py
-game/*
-TwoHandGame/*
-manage.py
-db.sqlite3
-.jsbeautifyrc
 .vscode
+.jsbeautifyrc
 

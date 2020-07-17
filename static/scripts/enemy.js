@@ -137,7 +137,7 @@ class Enemy
    */
   findCurrentPosition()
   {
-    return findField(this.pos.x, this.pos.y);
+    return document.querySelector('[posX = "' + this.pos.x + '"][posY = "' + this.pos.y + '"]');
   }
 
   /**
@@ -195,7 +195,7 @@ class Enemy
    */
   move(targetCoordinates)
   {
-    this.clearField();
+    this.clearField()
     let direction = this.setDirection(targetCoordinates);
 
     switch (direction) // replace position 
@@ -223,6 +223,7 @@ class Enemy
 
 function getRandomHeroCoordinates()
 {
+<<<<<<< HEAD
   let coordinates = [];
   // if (Math.random() >= 0.5)
   // {
@@ -236,6 +237,19 @@ function getRandomHeroCoordinates()
   // }
   coordinates.push(firstHeroCoordinates[0]);
   coordinates.push(firstHeroCoordinates[1]);
+=======
+  let coordinates = new Array();
+  if (Math.random() >= 0.5)
+  {
+    coordinates.push(firstHeroCoordinates[0]);
+    coordinates.push(firstHeroCoordinates[1]);
+  }
+  else
+  {
+    coordinates.push(secondHeroCoordinates[0]);
+    coordinates.push(secondHeroCoordinates[1]);
+  }
+>>>>>>> origin/Game
   return coordinates;
 }
 

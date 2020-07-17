@@ -49,7 +49,7 @@ function findYCoordinate(x)
  */
 function removeAttackArea(x, y)
 {
-  let currentAttackPosition = findField(x, y);
+  let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
   currentAttackPosition.classList.remove("attack-area");
 }
 
@@ -102,7 +102,7 @@ function clearAttackZone()
  */
 function addAttackArea(x, y)
 {
-  let currentAttackPosition = findField(x,y);
+  let currentAttackPosition = document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
   currentAttackPosition.classList.add("attack-area");
   attackZoneFieldsList.push(currentAttackPosition);
 }
@@ -156,6 +156,14 @@ function addPoints(quantity)
 {
   document.getElementsByClassName("score")[0].innerHTML = `Your score is: ${points}`;
   points += quantity;
+
+  $.ajax({
+    url: 'update_score/',
+    type: 'POST',
+    data: { 'score': points },
+    dataType: 'text',
+    cache: false
+  });
 }
 
 
