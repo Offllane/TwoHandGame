@@ -178,7 +178,6 @@ class Enemy
     let enemyPosition = this.findCurrentPosition();
     if (enemyPosition.classList.contains("firstHero") || enemyPosition.classList.contains("secondHero"))
     {
-      alert("here");
       config.lifeQuantity--;
       if (config.lifeQuantity <= 0)
       {
@@ -223,22 +222,7 @@ class Enemy
 
 function getRandomHeroCoordinates()
 {
-<<<<<<< HEAD
   let coordinates = [];
-  // if (Math.random() >= 0.5)
-  // {
-  //   coordinates.push(firstHeroCoordinates[0]);
-  //   coordinates.push(firstHeroCoordinates[1]);
-  // }
-  // else
-  // {
-  //   coordinates.push(secondHeroCoordinates[0]);
-  //   coordinates.push(secondHeroCoordinates[1]);
-  // }
-  coordinates.push(firstHeroCoordinates[0]);
-  coordinates.push(firstHeroCoordinates[1]);
-=======
-  let coordinates = new Array();
   if (Math.random() >= 0.5)
   {
     coordinates.push(firstHeroCoordinates[0]);
@@ -249,7 +233,8 @@ function getRandomHeroCoordinates()
     coordinates.push(secondHeroCoordinates[0]);
     coordinates.push(secondHeroCoordinates[1]);
   }
->>>>>>> origin/Game
+  coordinates.push(firstHeroCoordinates[0]);
+  coordinates.push(firstHeroCoordinates[1]);
   return coordinates;
 }
 
@@ -260,7 +245,7 @@ function randomInteger(min, max) {
 }
 
 /**
- * Get spawn coordinate to enemy in 3 field from hero
+ * Get spawn coordinate to enemy in random field exepted hero field
  */
 function getSpawnCoordinates()
 {

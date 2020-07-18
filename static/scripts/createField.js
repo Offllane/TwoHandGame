@@ -14,8 +14,7 @@ let backgroundsName = ["bluemoon.png", "Cavern.svg", "cityskyline.png", "darkFor
  * @example
  * setNewBackground([1.jpg, 2.png]);
  */
-function setNewBackground(array)
-{
+function setNewBackground(array) {
   let randomBackgroundIndex = Math.floor(Math.random() * array.length); //get random index from array
   let randomBackground = array[randomBackgroundIndex]; //get element from array with random index
   let backgroundStyle = backgroundPath + randomBackground; // create url path for image
@@ -29,15 +28,11 @@ setNewBackground(backgroundsName);
  * @memberof CreateGameField
  * @returns {nubmer} game field square size
  */
-function setAreaSize()
-{
+function setAreaSize() {
   let areaSize;
-  if (window.innerHeight < window.innerWidth / 2)
-  {
+  if (window.innerHeight < window.innerWidth / 2) {
     areaSize = window.innerHeight - 50; //set game square size like screen height 
-  }
-  else
-  {
+  } else {
     areaSize = window.innerWidth / 2; //set game square size like half screen width
   }
   return areaSize;
@@ -51,8 +46,7 @@ let areaSize = setAreaSize();
  * @memberof CreateGameField
  * @param {number} areaSize - {@link areaSize} of game field
  */
-function createGameArea(areaSize)
-{
+function createGameArea(areaSize) {
   let gameArea = document.createElement("section"); //game area
   gameArea.classList.add("game-area");
   gameArea.style.width = areaSize + 'px';
@@ -80,20 +74,15 @@ let fieldsArray = document.getElementsByClassName("field");
  * set attributes to all divs in game section from 1 to 30.
  * @memberof CreateGameField
  */
-function setCoordinates()
-{
+function setCoordinates() {
   let x = 1;
   let y = 1;
-  for (let i = 0; i < fieldsArray.length; i++)
-  {
-    if (x < 30)
-    {
+  for (let i = 0; i < fieldsArray.length; i++) {
+    if (x < 30) {
       fieldsArray[i].setAttribute("posX", x);
       fieldsArray[i].setAttribute("posY", y);
       x++;
-    }
-    else
-    {
+    } else {
       fieldsArray[i].setAttribute("posX", x);
       fieldsArray[i].setAttribute("posY", y);
       y++;
@@ -102,6 +91,16 @@ function setCoordinates()
   }
 }
 setCoordinates();
+
+/**
+ * Find field with given coordinates
+ * @param {int} x - x coordinate
+ * @param {int} y - y coordinate
+ * @return {Element} - DOM element(field of game zone)
+ */
+function findField(x, y) {
+  return document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
+}
 
 
 const popup = document.getElementsByClassName("popup")[0];
