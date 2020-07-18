@@ -3,8 +3,13 @@
  */
 
 const backgroundPath = "static/img/backgrounds/"; // use to make relative path for images
-let backgroundsName = ["bluemoon.png", "Cavern.svg", "cityskyline.png", "darkForest.jpg", "forest.png", "desert.png"];
+let backgroundsName = ["bluemoon.png","Cavern.svg", "cityskyline.png", "darkForest.jpg", "forest.png", "desert.png"];
 
+function randomInteger(min, max) {
+  // получить случайное число от (min-0.5) до (max+0.5)
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
 
 /**
  * Get random background name from array and set him to body background
@@ -21,6 +26,53 @@ function setNewBackground(array) {
   document.body.style.backgroundImage = `url('${backgroundStyle}')`; // set body background image
 }
 setNewBackground(backgroundsName);
+
+
+let avatarPath = "static/img/avatars/";
+let avatarArray = [
+  "0_Blacksmith_Chagrin_027.png",
+  "0_Blacksmith_Idle Blinking_016.png",
+  "0_Blacksmith_Idle Blinking_016.png",
+  "0_Blacksmith_Joy_015.png",
+  "0_Citizen_Communication_028.png",
+  "0_Citizen_Idle Blinking_029.png",
+  "0_Fallen_Angels_Hurt_000.png",
+  "0_Fallen_Angels_Idle_007.png",
+  "0_Fallen_Angels_Idle_012.png",
+  "0_Fallen_Angels_Kicking_004.png",
+  "0_Fallen_Angels_Kicking_006.png",
+  "0_Fallen_Angels_Run Slashing_005.png",
+  "0_Fallen_Angels_Slashing_006.png",
+  "0_Fallen_Angels_Walking_012.png",
+  "0_Golem_Idle_005.png",
+  "0_Golem_Idle_007.png",
+  "0_Golem_Idle_014.png",
+  "0_Golem_Idle_015.png",
+  "0_Golem_Kicking_004.png",
+  "0_Golem_Slashing_000.png",
+  "0_Golem_Slashing_005.png",
+  "0_Golem_Throwing_005.png",
+  "0_Golem_Throwing_006.png",
+  "0_Jeweler_Chagrin_025.png",
+  "0_Jeweler_Idle_019.png",
+  "0_Sage_Chagrin_028.png",
+  "0_Sage_Idle_010.png",
+  "0_Sage_Idle_017.png",
+  "0_Sage_Idle_025.png",
+  "0_Warlord_Chagrin_020.png",
+  "0_Warlord_Idle_010.png",
+  "0_Warlord_Idle_019.png",
+  "2_Golem_Kicking_004.png",
+  "Golem_01_Idle_005.png"
+];
+
+function setNewAvatar(avatarArray) {
+  let randomAvatarIndex = randomInteger(0, avatarArray.length); //get random index from array
+  let randomAvatar = avatarArray[randomAvatarIndex]; //get element from array with random index
+  let userImageStyle = avatarPath + randomAvatar;  
+  document.getElementsByClassName("user-image")[0].style.backgroundImage = `url('${userImageStyle}')`;
+}
+setNewAvatar(avatarArray);
 
 
 /** 
@@ -103,7 +155,7 @@ function findField(x, y) {
 }
 
 
-const popup = document.getElementsByClassName("popup")[0];
+const popup = document.getElementsByClassName("loose-page")[0];
 popup.style.height = window.innerHeight;
 popup.style.width = window.innerWidth;
 

@@ -15,7 +15,17 @@ body {
   overflow-y: hidden;
 }
 
-.popup {
+.user-image{
+  display: block;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  background-size: 80px;
+  object-fit: contain;
+  min-height: 80px;
+  z-index: 2;
+}
+
+.loose-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +71,11 @@ body {
   padding: 20px;
   order: 1;
   margin: 20px;
+}
+
+.user {
+  font-size: 26px;
+  line-height: 29px;
 }
 
 .game-area {

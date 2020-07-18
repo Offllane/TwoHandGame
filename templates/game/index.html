@@ -14,17 +14,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 {% block content %}
+
 <body>
-{% if request.user.is_authenticated %}
-    Hello {{ request.user }}
-
-{% else %}
-    NOT WORK
-{% endif %}
-
-  <section class="popup">
+  <section class="loose-page">
     <section class="loose-image"></section>
-    <section class="popup-score"> Your score is: 0</section>
+    <section class="loose-page-score"> Your score is: 0</section>
     <section class="under-button"> Try again</section>
     <button onclick="window.location.reload()" class="button-reload"></button>
   </section>
@@ -32,18 +26,29 @@
     Enemy turn in: <span class="steps-quantity"></span>
   </section>
   <section class="main-inform">
+    <section class="user">
+      <section class="user-image"></section>
+      {% if request.user.is_authenticated %}
+      {{ request.user }}
+
+      {% else %}
+      Not logged
+      {% endif %}
+    </section>
     <section class="score"> Your score is: 0</section>
     <section class="lifes"> Lifes remainig: 10</section>
     <p style="margin-top: 20px;">
       <div class="b-container">
         Help
-        <a href="javascript:PopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}" alt=""></a>
+        <a href="javascript:HelpPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}"
+            alt=""></a>
       </div>
       <div class="b-popup" id="popup1">
         <div class="b-popup-content">
           <section class="popup-header">
             Help
-            <a class="popup-cancel" href="javascript:PopUpHide()"><img class="popup-cancel-image" src="{% static 'img/close(vector_version).png' %}" alt=""></a>
+            <a class="popup-cancel" href="javascript:HelpPopUpHide()"><img class="popup-cancel-image"
+                src="{% static 'img/close(vector_version).png' %}" alt=""></a>
           </section>
           <section>
             <p style="font-weight: bold;">Controls</p>
@@ -63,10 +68,10 @@
         </div>
       </div>
     </p>
-      <section>Top players</section>
-        {% for player in players %}
-            <section>{{ player.username }} - {{ player.score }}</section>
-        {% endfor %}
+    <section>Top players</section>
+    {% for player in players %}
+    <section>{{ player.username }} - {{ player.score }}</section>
+    {% endfor %}
   </section>
   <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
   <script src="{% static 'scripts/config.js' %}"></script>
@@ -77,4 +82,5 @@
   <script src="{% static 'scripts/move.js' %}"></script>
 </body>
 {% endblock %}
+
 </html>
