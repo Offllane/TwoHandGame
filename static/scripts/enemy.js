@@ -194,7 +194,7 @@ class Enemy
    */
   move(targetCoordinates)
   {
-    this.clearField()
+    this.clearField();
     let direction = this.setDirection(targetCoordinates);
 
     switch (direction) // replace position 
