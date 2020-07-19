@@ -85,14 +85,14 @@ WSGI_APPLICATION = 'TwoHandGame.wsgi.application'
 
 DATABASES = {
     'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'game',
-        'USER': 'forbz',
-        'PASSWORD': '7751876',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'game',
+    #     'USER': 'forbz',
+    #     'PASSWORD': '7751876',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
     }
 }
 
@@ -140,11 +140,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_DIR = (os.path.join(BASE_DIR,'static'))
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,'static')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
 
 # STATIC_ROOT = os.path.join('home/forbz/PycharmProjects/TwoHandGame', 'static')
 # STATICFILES_FINDER = (
