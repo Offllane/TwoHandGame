@@ -1,1 +1,1 @@
-web: gunicorn TwoHandGame.wsgi --log-file--
+web: gunicorn TwoHandGame.wsgi --log-file -
