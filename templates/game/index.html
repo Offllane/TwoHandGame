@@ -16,59 +16,120 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 {% block content %}
+
 <body>
-{% if request.user.is_authenticated %}
-    Hello {{ request.user }}
-
-{% else %}
-    NOT WORK
-{% endif %}
-
-  <section class="popup">
+  <section class="loose-page">
     <section class="loose-image"></section>
-    <section class="popup-score"> Your score is: 0</section>
+    <section class="loose-page-score"> Your score is: 0</section>
     <section class="under-button"> Try again</section>
     <button onclick="window.location.reload()" class="button-reload"></button>
   </section>
-  <section class="step-counter">
+  <section class="additional-inform">
     Enemy turn in: <span class="steps-quantity"></span>
   </section>
   <section class="main-inform">
+    <section class="user">
+      <section class="user-image"></section>
+      {% if request.user.is_authenticated %}
+      {{ request.user }}
+
+      {% else %}
+      Not logged
+      {% endif %}
+    </section>
     <section class="score"> Your score is: 0</section>
     <section class="lifes"> Lifes remainig: 10</section>
     <p style="margin-top: 20px;">
       <div class="b-container">
         Help
-        <a href="javascript:PopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}" alt=""></a>
+        <a href="javascript:HelpPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}"
+            alt=""></a>
       </div>
       <div class="b-popup" id="popup1">
         <div class="b-popup-content">
           <section class="popup-header">
             Help
-            <a class="popup-cancel" href="javascript:PopUpHide()"><img class="popup-cancel-image" src="{% static 'img/close(vector_version).png' %}" alt=""></a>
+            <a class="popup-cancel" href="javascript:HelpPopUpHide()"><img class="popup-cancel-image"
+                src="{% static 'img/close(vector_version).png' %}" alt=""></a>
           </section>
-          <section>
-            <p style="font-weight: bold;">Controls</p>
-            <p>Use W,A,S,D to move first hero.</p>
-            <p>Use arrows to move second hero.</p>
-            <p>Use space to hit enemies.</p>
-          </section>
+          <section class="popup-main-inform">
+            <section>
+              <p style="font-weight: bold;">Controls</p>
+              <p>Use W,A,S,D to move first hero.</p>
+              <p>Use arrows to move second hero.</p>
+              <p>Use space to hit enemies.</p>
+            </section>
 
-          <section>
-            <p style="font-weight: bold;">How to play</p>
-            <p>Run from enemies.</p>
-            <p>Hit them to get points.</p>
-            <p>Enemies turn on every fourth turn of any hero (you can see at rigth).</p>
-            <p>You have some lifes at start. You loose one of them, if enemy catch you.</p>
-            <p>Two and more enemies can stay at the same field. If they catch you, you get full damage.</p>
+            <section>
+              <p style="font-weight: bold;">How to play</p>
+              <p>Run from enemies.</p>
+              <p>Hit them to get points.</p>
+              <p>Enemies turn on every fourth turn of any hero (you can see at rigth).</p>
+              <p>You have some lifes at start. You loose one of them, if enemy catch you.</p>
+              <p>Two and more enemies can stay at the same field. If they catch you, you get full damage.</p>
+            </section>
           </section>
         </div>
       </div>
     </p>
-      <section>Top players</section>
-        {% for player in players %}
-            <section>{{ player.username }} - {{ player.score }}</section>
-        {% endfor %}
+    <p>
+      <div class="b-container">
+        Best Players
+        <a href="javascript:TopPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/cup.png'%}"
+            alt=""></a>
+      </div>
+      <div class="b-popup" id="popup2">
+        <div class="b-popup-content">
+          <section class="popup-header">
+            Best players:
+            <a class="popup-cancel" href="javascript:TopPopUpHide()"><img class="popup-cancel-image"
+                src="{% static 'img/close(vector_version).png' %}" alt=""></a>
+          </section>
+          <section class="best-players">
+            {% for player in players %}
+            <section class="username">{{ player.username }} - {{ player.score }}</section>
+            {% endfor %}
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+
+            v
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            v
+            v
+            v
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+          </section>
+        </div>
+      </div>
+    </p>
   </section>
   <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
   <script src="{% static 'scripts/config.js' %}"></script>
@@ -79,4 +140,5 @@
   <script src="{% static 'scripts/move.js' %}"></script>
 </body>
 {% endblock %}
+
 </html>

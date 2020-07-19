@@ -15,7 +15,18 @@ body {
   overflow-y: hidden;
 }
 
-.popup {
+.user-image{
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center center;
+  object-fit: contain;
+  min-height: 80px;
+  width: 80px;
+  z-index: 2;
+}
+
+.loose-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +72,11 @@ body {
   padding: 20px;
   order: 1;
   margin: 20px;
+}
+
+.user {
+  font-size: 26px;
+  line-height: 29px;
 }
 
 .game-area {
@@ -139,7 +155,7 @@ body {
   z-index: 3;
 }
 
-.step-counter {
+.additional-inform {
   background-color: white;
   width: 15%;
   margin-top: 20px;

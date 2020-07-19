@@ -16,7 +16,7 @@
   margin: 40px auto 0px auto;
   background-color: white;
   width: 300px;
-  padding: 10px;
+  padding-right: 0px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px #000;
 }
@@ -24,9 +24,65 @@
 .popup-header {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .popup-cancel-image {
-  width:25px;
+  width: 25px;
   height: 25px;
+}
+
+.popup-main-inform {
+  padding: 10px;
+}
+
+.best-players {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.username {
+  display: flex;
+}
+
+.username::before {
+  content: "";
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/garment.png);
+  opacity: .5;
+}
+
+.username:nth-child(1):before {
+  content: "";
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/goldCrown.png);
+  opacity: 1;
+}
+
+.username:nth-child(2):before {
+  content: "";
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/silverCrown.png);
+  opacity: 1;
+}
+
+.username:nth-child(3):before {
+  content: "";
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/bronzeCrown.png);
+  opacity: 1;
 }
