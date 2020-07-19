@@ -67,9 +67,9 @@ let avatarArray = [
 ];
 
 function setNewAvatar(avatarArray) {
-  let randomAvatarIndex = randomInteger(0, avatarArray.length); //get random index from array
+  let randomAvatarIndex = randomInteger(0, avatarArray.length-1); //get random index from array
   let randomAvatar = avatarArray[randomAvatarIndex]; //get element from array with random index
-  let userImageStyle = avatarPath + randomAvatar;  
+  let userImageStyle = avatarPath + randomAvatar;
   document.getElementsByClassName("user-image")[0].style.backgroundImage = `url('${userImageStyle}')`;
 }
 setNewAvatar(avatarArray);
