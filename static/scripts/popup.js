@@ -6,17 +6,23 @@ function makePopupVisible() {
 }
 
 
-$(document).ready(function()
-{
+$(document).ready(function () {
   HelpPopUpHide();
+  TopPopUpHide();
 });
 
-function HelpPopUpShow()
-{
+function HelpPopUpShow() {
   $("#popup1").show();
 }
 
-function HelpPopUpHide()
-{
+function HelpPopUpHide() {
   $("#popup1").hide();
+}
+
+function TopPopUpHide() {
+  $("#popup2").hide();
+}
+
+function TopPopUpShow() {
+  $("#popup2").show();
 }

@@ -18,10 +18,11 @@ body {
 .user-image{
   display: block;
   background-repeat: no-repeat;
-  /* background-position: center center; */
   background-size: 80px;
+  background-position: center center;
   object-fit: contain;
   min-height: 80px;
+  width: 80px;
   z-index: 2;
 }
 
@@ -154,7 +155,7 @@ body {
   z-index: 3;
 }
 
-.step-counter {
+.additional-inform {
   background-color: white;
   width: 15%;
   margin-top: 20px;
