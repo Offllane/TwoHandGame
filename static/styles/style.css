@@ -85,7 +85,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   order: 2;
-  background-image: url(../img/bg.png);
+  background-image: url(../img/gameareaObjects/bg.png);
   z-index: -2;
 }
 
@@ -96,61 +96,61 @@ body {
 
 .left-field {
   background-position: center;
-  background-image: url(../img/left-field.png) !important;
+  background-image: url(../img/gameareaObjects/left-field.png) !important;
   object-fit: cover;
   z-index: -1;
 }
 
 .firstHero {
-  background-image: url(../img/firstHero_front.png);
+  background-image: url(../img/gameareaObjects/firstHero_front.png);
   background-repeat: no-repeat;
   z-index: 3;
 }
 
 .firstHero_back-side {
-  background-image: url(../img/firstHero_back.png);
+  background-image: url(../img/gameareaObjects/firstHero_back.png);
   background-repeat: no-repeat;
 }
 
 .firstHero_right-side {
-  background-image: url(../img/firstHero_right.png);
+  background-image: url(../img/gameareaObjects/firstHero_right.png);
   background-repeat: no-repeat;
 }
 
 .firstHero_left-side {
-  background-image: url(../img/firstHero_left.png);
+  background-image: url(../img/gameareaObjects/firstHero_left.png);
   background-repeat: no-repeat;
 }
 
 .secondHero {
-  background-image: url(../img/secondHero_front.png);
+  background-image: url(../img/gameareaObjects/secondHero_front.png);
   background-repeat: no-repeat;
   z-index: 3;
 }
 
 .secondHero_back-side {
-  background-image: url(../img/secondHero_back.png);
+  background-image: url(../img/gameareaObjects/secondHero_back.png);
   background-repeat: no-repeat;
 }
 
 .secondHero_left-side{
-  background-image: url(../img/secondHero_left.png);
+  background-image: url(../img/gameareaObjects/secondHero_left.png);
   background-repeat: no-repeat;
 }
 
 .secondHero_right-side {
-  background-image: url(../img/secondHero_right.png);
+  background-image: url(../img/gameareaObjects/secondHero_right.png);
   background-repeat: no-repeat;
 }
 
 .enemy {
-  background-image: url(../img/reaper.png) !important;
+  background-image: url(../img/gameareaObjects/reaper.png) !important;
   background-repeat: no-repeat;
   z-index: 3;
 }
 
 .enemy_left-side {
-  background-image: url(../img/reaper_left.png) !important;
+  background-image: url(../img/gameareaObjects/reaper_left.png) !important;
   background-repeat: no-repeat;
   z-index: 3;
 }
@@ -169,14 +169,14 @@ body {
 }
 
 .attack-area {
-  background-image: url(../img/attack-field.png);
+  background-image: url(../img/gameareaObjects/attack-field.png);
   background-repeat: no-repeat;
   opacity: .5;
   z-index: 2;
 }
 
 .attack-event {
-  background-image: url(../img/attack.png);
+  background-image: url(../img/gameareaObjects/attack.png);
   opacity: 1;
 }
 
