@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TwoHandGame</title>
+   <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+   <link rel="stylesheet" href="{% static 'styles/popup.css' %}">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
-
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'styles/style.css' %}">
-<link rel="stylesheet" href="{% static 'styles/popup.css' %}">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 {% block content %}
 
@@ -87,43 +85,6 @@
             {% for player in players %}
             <section class="username">{{ player.username }} - {{ player.score }}</section>
             {% endfor %}
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-
-            v
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            v
-            v
-            v
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
           </section>
         </div>
       </div>

@@ -1,10 +1,20 @@
+@font-face {
+	font-family: 'MasonChronicles';
+	src: url('../fonts/masonchronicles.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/masonchronicles.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/masonchronicles.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/masonchronicles.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/masonchronicles.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/masonchronicles.svg#masonchronicles') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
 * {
   margin: 0;
-  font-family: 'Roboto';
   font-size: 20px;
 }
 
 body {
+  font-family: 'MasonChronicles';
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100%;
