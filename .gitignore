@@ -10,4 +10,4 @@ out/*
 db.sqlite3
 .vscode
 .jsbeautifyrc
-
+TwoHandGame/settings.py
