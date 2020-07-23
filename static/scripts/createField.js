@@ -2,7 +2,6 @@
  * @namespace CreateGameField
  */
 
-const backgroundPath = "static/img/backgrounds/"; // use to make relative path for images
 let backgroundsName = ["static/img/backgrounds/desert.png",
   "static/img/backgrounds/pesok_barhany_pustynia_162742_1920x1080.jpg",
   "static/img/backgrounds/pesok_pustynia_barhany_178480_1920x1080.jpg",

@@ -20,4 +20,12 @@ $.preloadImages("static/img/gameareaObjects/attack.png",
   "static/img/gameareaObjects/secondHero_back.png",
   "static/img/gameareaObjects/secondHero_front.png",
   "static/img/gameareaObjects/secondHero_left.png",
-  "static/img/gameareaObjects/secondHero_right.png");
+  "static/img/gameareaObjects/secondHero_right.png",
+  "static/img/backgrounds/desert.png",
+  "static/img/backgrounds/pesok_barhany_pustynia_162742_1920x1080.jpg",
+  "static/img/backgrounds/pesok_pustynia_barhany_178480_1920x1080.jpg",
+  "static/img/backgrounds/pesok_pustynia_sled_161642_1920x1080.jpg",
+  "static/img/backgrounds/pesok_sledy_pustynia_177059_1920x1080.jpg",
+  "static/img/backgrounds/pesok_sledy_volnistyj_175005_1920x1080.jpg",
+  "static/img/backgrounds/pesok_sledy_zasuha_169924_1920x1080.jpg",
+  "static/img/backgrounds/pesok_volnistyj_noch_175753_1920x1080.jpg");
