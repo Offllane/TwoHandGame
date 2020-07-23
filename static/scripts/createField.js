@@ -3,7 +3,15 @@
  */
 
 const backgroundPath = "static/img/backgrounds/"; // use to make relative path for images
-let backgroundsName = ["bluemoon.png","Cavern.svg", "cityskyline.png", "darkForest.jpg", "forest.png", "desert.png"];
+let backgroundsName = ["static/img/backgrounds/desert.png",
+  "static/img/backgrounds/pesok_barhany_pustynia_162742_1920x1080.jpg",
+  "static/img/backgrounds/pesok_pustynia_barhany_178480_1920x1080.jpg",
+  "static/img/backgrounds/pesok_pustynia_sled_161642_1920x1080.jpg",
+  "static/img/backgrounds/pesok_sledy_pustynia_177059_1920x1080.jpg",
+  "static/img/backgrounds/pesok_sledy_volnistyj_175005_1920x1080.jpg",
+  "static/img/backgrounds/pesok_sledy_zasuha_169924_1920x1080.jpg",
+  "static/img/backgrounds/pesok_volnistyj_noch_175753_1920x1080.jpg"
+];
 
 function randomInteger(min, max) {
   // получить случайное число от (min-0.5) до (max+0.5)
@@ -22,8 +30,7 @@ function randomInteger(min, max) {
 function setNewBackground(array) {
   let randomBackgroundIndex = Math.floor(Math.random() * array.length); //get random index from array
   let randomBackground = array[randomBackgroundIndex]; //get element from array with random index
-  let backgroundStyle = backgroundPath + randomBackground; // create url path for image
-  document.body.style.backgroundImage = `url('${backgroundStyle}')`; // set body background image
+  document.body.style.backgroundImage = `url('${randomBackground}')`; // set body background image
 }
 setNewBackground(backgroundsName);
 
