@@ -163,9 +163,7 @@ function isLastStep() {
     drawRemainingSteps(); // draw step quantity
     if (spawnEnemyTurn == config.enemySpawnTime) {
       let enemyCoordinate = getSpawnCoordinates();
-      let enemy = new Enemy(enemyCoordinate[0], enemyCoordinate[1]);
-      // console.log(enemyCoordinate[0], enemyCoordinate[1]);
-      // enemy.addToArea;
+      let enemy = new Enemy(enemyCoordinate[0], enemyCoordinate[1], "reaper");
       enemiesList.push(enemy); //create new enemy
       spawnEnemyTurn = 0;
     }

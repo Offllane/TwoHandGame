@@ -153,13 +153,13 @@ body {
   background-repeat: no-repeat;
 }
 
-.enemy {
+.reaper {
   background-image: url(../img/gameareaObjects/reaper.png) !important;
   background-repeat: no-repeat;
   z-index: 3;
 }
 
-.enemy_left-side {
+.reaper_left-side {
   background-image: url(../img/gameareaObjects/reaper_left.png) !important;
   background-repeat: no-repeat;
   z-index: 3;
