@@ -161,11 +161,15 @@ function isLastStep() {
     spawnEnemyTurn++;
     heroStepCounter = 0; //add new turns to heroes
     drawRemainingSteps(); // draw step quantity
-    if (spawnEnemyTurn == config.enemySpawnTime) {
+    if (spawnEnemyTurn % config.reaperSpawnTime == 0) {
       let enemyCoordinate = getSpawnCoordinates();
-      let enemy = new Enemy(enemyCoordinate[0], enemyCoordinate[1], "reaper");
-      enemiesList.push(enemy); //create new enemy
-      spawnEnemyTurn = 0;
+      let reaper = new Reaper(enemyCoordinate[0], enemyCoordinate[1], "reaper");
+      enemiesList.push(reaper); //create new enemy
+    }
+    if (spawnEnemyTurn % config.rogueSpawnTime == 0) {
+      let enemyCoordinate = getSpawnCoordinates();
+      let rogue = new Rogue(enemyCoordinate[0], enemyCoordinate[1], "rogue");
+      enemiesList.push(rogue); //create new enemy
     }
   }
 }

@@ -15,8 +15,12 @@ $.preloadImages("static/img/gameareaObjects/attack.png",
   "static/img/gameareaObjects/firstHero_left.png",
   "static/img/gameareaObjects/firstHero_right.png",
   "static/img/gameareaObjects/left-field.png",
+
   "static/img/gameareaObjects/reaper.png",
   "static/img/gameareaObjects/reaper_left.png",
+  "static/img/gameareaObjects/rogue.png",
+  "static/img/gameareaObjects/rogue_left.png",
+
   "static/img/gameareaObjects/secondHero_back.png",
   "static/img/gameareaObjects/secondHero_front.png",
   "static/img/gameareaObjects/secondHero_left.png",

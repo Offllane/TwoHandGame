@@ -1,0 +1,11 @@
+.rogue {
+  background-image: url(../../img/gameareaObjects/rogue.png) !important;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+.rogue_left-side {
+  background-image: url(../../img/gameareaObjects/rogue_left.png) !important;
+  background-repeat: no-repeat;
+  z-index: 3;
+}

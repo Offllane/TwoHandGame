@@ -214,6 +214,3 @@ function getSpawnCoordinates() {
 }
 
 let enemiesList = []; //will be contain all enemies
-
-let enemy = new Enemy(7, 2, "reaper");
-enemiesList.push(enemy);

@@ -1,7 +1,9 @@
 let config = {
   step: 4,
-  enemySpeed: 1,
   heroSpeed: 1,
-  enemySpawnTime: 2,
   lifeQuantity: 10,
+  reaperSpeed: 1,
+  reaperSpawnTime: 2,
+  rogueSpeed: 2,
+  rogueSpawnTime:3
 };
