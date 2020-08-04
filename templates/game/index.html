@@ -11,6 +11,9 @@
    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
    <link rel="stylesheet" href="{% static 'styles/popup.css' %}">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="{% static 'styles/enemiesStyle/reaper.css' %}">
+   <link rel="stylesheet" href="{% static 'styles/enemiesStyle/rogue.css' %}">
 </head>
 
 {% block content %}
@@ -71,8 +74,12 @@
           </section>
           <section class="best-players">
             {% for player in players %}
-            <section class="username">{{ player.username }} - {{ player.score }}</section>
-            {% endfor %}
+                {%  if player.date_of_score == 'date_of_score' %}
+                    <section class="username">{{ player.username }} - {{ player.score }}</section>
+                {% else %}
+                    <section class="username">{{ player.username }} - {{ player.score }} - {{ player.date_of_score }}</section>
+                {% endif %}
+            {% endfor %}            
           </section>
         </div>
       </div>
@@ -105,7 +112,11 @@
   <script src="{% static 'scripts/config.js' %}"></script>
   <script src="{% static 'scripts/createField.js' %}"></script>
   <script src="{% static 'scripts/popup.js' %}"></script>
-  <script src="{% static 'scripts/enemy.js' %}"></script>
+
+  <script src="{% static 'scripts/enemies/enemy.js' %}"></script>
+  <script src="{% static 'scripts/enemies/reaper.js' %}"></script>
+  <script src="{% static 'scripts/enemies/rogue.js' %}"></script>
+
   <script src="{% static 'scripts/attack.js' %}"></script>
   <script src="{% static 'scripts/move.js' %}"></script>
 </body>

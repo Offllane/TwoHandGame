@@ -1,3 +1,6 @@
+import datetime
+
+from django.utils import timezone
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 
@@ -8,5 +11,6 @@ from django.dispatch import receiver
 
 class CustomUser(AbstractUser):
     score = models.PositiveIntegerField('score', default = 0)
+    date_of_score = models.CharField('date_of_score', default = datetime.date(2020, 8, 1), blank = False, max_length = 100)
 
 

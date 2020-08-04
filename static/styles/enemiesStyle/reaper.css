@@ -1,0 +1,11 @@
+.reaper {
+  background-image: url(../../img/gameareaObjects/reaper.png) !important;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+.reaper_left-side {
+  background-image: url(../../img/gameareaObjects/reaper_left.png) !important;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
