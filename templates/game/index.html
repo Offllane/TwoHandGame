@@ -77,7 +77,9 @@
                 {%  if player.date_of_score == 'date_of_score' %}
                     <section class="username">{{ player.username }} - {{ player.score }}</section>
                 {% else %}
-                    <section class="username">{{ player.username }} - {{ player.score }} - {{ player.date_of_score }}</section>
+                    <section class="username">{{ player.username }} - {{ player.score }}</section>
+                    <section>{{ player.date_of_score }}</section>
+
                 {% endif %}
             {% endfor %}            
           </section>

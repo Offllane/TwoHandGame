@@ -69,13 +69,9 @@ def update_score(request):
         player = CustomUser.objects.get(username=request.user)
         print('Player:', player)
         if int(data) > int(player.score):
-            if player.date_of_score == datetime.date.today():
-                player.score = data
-                player.save()
-            else:
-                player.date_of_score = datetime.date.today()
-                player.score = data
-                player.save()
-        print('Date:', player.date_of_score)
+            player.date_of_score = datetime.date.today().strftime("%d.%m.%Y")
+            player.score = data
+            player.save()
+        print('Score player:', player.score)
         return redirect('index')
     return redirect('index')
