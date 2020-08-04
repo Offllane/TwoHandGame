@@ -2,9 +2,7 @@ import datetime
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
 from game.forms import UserRegistrationForm, LoginForm
@@ -69,9 +67,11 @@ def update_score(request):
         player = CustomUser.objects.get(username=request.user)
         print('Player:', player)
         if int(data) > int(player.score):
-            player.date_of_score = timezone.now
+            print(datetime.date.today())
+            date = datetime.date.today()
+            player.date_of_score = date.strftime('%d.%m.%Y')
             player.score = data
             player.save()
-        print('Score player:', player.score)
+        print('Date:', player.date_of_score)
         return redirect('index')
     return redirect('index')
