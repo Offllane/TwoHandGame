@@ -6,11 +6,11 @@
 .b-popup {
   width: 100%;
   height: 100%;
-  margin-left: -40px;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   position: fixed;
   top: 0px;
+  left: 0px;
 }
 .b-popup .b-popup-content {
   margin: 40px auto 0px auto;
@@ -45,6 +45,15 @@
 
 .username {
   display: flex;
+  margin-bottom: 2px;
+  min-width: 250px;
+}
+
+.date-of-score {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-family: 'Roboto';
+  padding-left: 40px;
 }
 
 .username::before {
@@ -52,7 +61,7 @@
   background-size: 30px;
   background-repeat: no-repeat;
   width: 40px;
-  height: 40px;
+  height: 30px;
   background-image: url(../img/garment.png);
   opacity: .5;
 }
@@ -62,18 +71,8 @@
   background-size: 30px;
   background-repeat: no-repeat;
   width: 40px;
-  height: 40px;
+  height: 30px;
   background-image: url(../img/goldCrown.png);
-  opacity: 1;
-}
-
-.username:nth-child(2):before {
-  content: "";
-  background-size: 30px;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  background-image: url(../img/silverCrown.png);
   opacity: 1;
 }
 
@@ -82,7 +81,41 @@
   background-size: 30px;
   background-repeat: no-repeat;
   width: 40px;
-  height: 40px;
+  height: 30px;
+  background-image: url(../img/silverCrown.png);
+  opacity: 1;
+}
+
+.username:nth-child(5):before {
+  content: "";
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 30px;
   background-image: url(../img/bronzeCrown.png);
   opacity: 1;
+}
+
+.enemy-card {
+  margin-bottom: 15px;
+}
+
+.enemy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.enemy-avatar img{
+  margin-left:15px;
+  width: 50px;
+  height: 60px;
+}
+
+.enemy-name {
+  font-weight: bold;
+}
+
+.enemy-description {
+  padding:10px;
 }

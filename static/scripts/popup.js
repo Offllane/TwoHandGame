@@ -8,6 +8,7 @@ function makePopupVisible() {
 
 $(document).ready(function () {
   HelpPopUpHide();
+  EnemyPopUpHide();
   TopPopUpHide();
 });
 
@@ -25,4 +26,12 @@ function TopPopUpHide() {
 
 function TopPopUpShow() {
   $("#popup2").show();
+}
+
+function EnemyPopUpHide() {
+  $("#popup3").hide();
+}
+
+function EnemyPopUpShow() {
+  $("#popup3").show();
 }

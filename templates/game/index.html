@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
+{% load static %}
 
 {% load static %}
 
@@ -8,12 +8,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TwoHandGame</title>
-   <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-   <link rel="stylesheet" href="{% static 'styles/popup.css' %}">
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/popup.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-   <link rel="stylesheet" href="{% static 'styles/enemiesStyle/reaper.css' %}">
-   <link rel="stylesheet" href="{% static 'styles/enemiesStyle/rogue.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/enemiesStyle/reaper.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/enemiesStyle/rogue.css' %}">
 </head>
 
 {% block content %}
@@ -26,7 +26,7 @@
     <button onclick="window.location.reload()" class="button-reload"></button>
   </section>
   <section class="additional-inform">
-    <p style="margin-top: 20px;">
+    <section style="margin-top: 20px;" class="additional-inform-field">
       <div class="b-container">
         Help
         <a href="javascript:HelpPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}"
@@ -58,8 +58,8 @@
           </section>
         </div>
       </div>
-    </p>
-    <p>
+    </section>
+    <section class="additional-inform-field">
       <div class="b-container">
         Best Players
         <a href="javascript:TopPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/cup.png'%}"
@@ -74,26 +74,72 @@
           </section>
           <section class="best-players">
             {% for player in players %}
-                {%  if player.date_of_score == 'date_of_score' %}
-                    <section class="username">{{ player.username }} - {{ player.score }}</section>
-                {% else %}
-                    <section class="username">{{ player.username }} - {{ player.score }}</section>
-                    <section>{{ player.date_of_score }}</section>
+            {%  if player.date_of_score == 'date_of_score' %}
+            <section class="username">{{ player.username }} - {{ player.score }}</section>
+            {% else %}
+            <section class="username">{{ player.username }} - {{ player.score }}</section>
+            <section class="date-of-score">{{ player.date_of_score }}</section>
 
-                {% endif %}
-            {% endfor %}            
+            {% endif %}
+            {% endfor %}
           </section>
         </div>
       </div>
-    </p>
-    <p>
+    </section>
+    <section class="additional-inform-field">
+      <div class="b-container">
+        Enemies
+        <a href="javascript:EnemyPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/enemy.png'%}"
+            alt=""></a>
+      </div>
+      <div class="b-popup" id="popup3">
+        <div class="b-popup-content">
+          <section class="popup-header">
+            Enemies:
+            <a class="popup-cancel" href="javascript:EnemyPopUpHide()"><img class="popup-cancel-image"
+                src="{% static 'img/close(vector_version).png' %}" alt=""></a>
+          </section>
+          <section class="popup-main">
+            <section class="enemy-card">
+              <section class="enemy-header">
+                <section class="enemy-avatar">
+                  <img src="../../static/img/gameareaObjects/reaper.png" alt="">
+                </section>
+                <section class="enemy-name"> Reaper</section>
+              </section>
+              <section class="enemy-description">
+                Most common enemy. <br>
+                Slowly move to hero side.
+                Quicly spawn.
+                Spawn with friend;
+              </section>
+            </section>
+            <section class="enemy-card">
+              <section class="enemy-header">
+                <section class="enemy-avatar">
+                  <img src="../../static/img/gameareaObjects/rogue.png" alt="">
+                </section>
+                <section class="enemy-name"> Rogue</section>
+              </section>
+              <section class="enemy-description">
+                Common enemy. <br>
+                Faster than reaper.
+                Quicly spawn.
+                Can miss the hero.
+              </section>
+            </section>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="additional-inform-field">
       <div class="b-container">
         Game website
         <a href="https://lit-hollows-53777.herokuapp.com/"><img style="width:25px; height: 25px;"
             src="{% static 'img/websiteImage.png '%}" alt="website"></a>
       </div>
-    </p>
-    
+    </section>
+
   </section>
   <section class="main-inform">
     <section class="user">

@@ -25,6 +25,10 @@ body {
   overflow-y: hidden;
 }
 
+.user {
+  font-weight: bold;
+}
+
 .user-image{
   display: block;
   background-repeat: no-repeat;
@@ -160,6 +164,10 @@ body {
   margin-right: 30px;
   padding: 20px;
   order:3;
+}
+
+.additional-inform-field {
+  padding-bottom: 10px;
 }
 
 .steps-quantity {
