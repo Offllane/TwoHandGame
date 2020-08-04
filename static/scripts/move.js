@@ -162,7 +162,7 @@ function isLastStep() {
     heroStepCounter = 0; //add new turns to heroes
     drawRemainingSteps(); // draw step quantity
     if (spawnEnemyTurn % config.reaperSpawnTime == 0) {
-      for (let i = 0; i <= config.reaperSpawnQuantity; i++)
+      for (let i = 0; i < config.reaperSpawnQuantity; i++)
       {
         let enemyCoordinate = getSpawnCoordinates();
         let reaper = new Reaper(enemyCoordinate[0], enemyCoordinate[1], "reaper");
