@@ -154,6 +154,10 @@
     <section class="score"> Your score is: 0</section>
     <section class="lifes"> Lifes remainig: 10</section>
     Enemy turn in: <span class="steps-quantity"></span>
+    <section class="mode-buttons">
+      <section class="easy-mode game-mode js-active">Eazy mode</section>
+      <section class="hard-mode game-mode"> Hard mode</section>
+    </section>
   </section>
   <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
   <script src="{% static 'scripts/optimization.js' %}"></script>
@@ -165,6 +169,7 @@
   <script src="{% static 'scripts/enemies/reaper.js' %}"></script>
   <script src="{% static 'scripts/enemies/rogue.js' %}"></script>
 
+  <script src="{% static 'scripts/switchGameMode.js' %}"></script>
   <script src="{% static 'scripts/attack.js' %}"></script>
   <script src="{% static 'scripts/move.js' %}"></script>
 </body>
