@@ -11,6 +11,10 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     list_display = ['username', 'email', 'score']
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {
+            'fields':('score', 'date_of_score',)
+        }),
+    )
 
-
-admin.site.register(CustomUser,CustomUserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)
