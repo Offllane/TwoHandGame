@@ -162,12 +162,11 @@ function isLastStep() {
     heroStepCounter = 0; //add new turns to heroes
     drawRemainingSteps(); // draw step quantity
     if (spawnEnemyTurn % config.reaperSpawnTime == 0) {
-      for (let i = 0; i <= config.reaperSpawnQuantity; i++)
-      {
+      for (let i = 0; i <= config.reaperSpawnQuantity; i++) {
         let enemyCoordinate = getSpawnCoordinates();
         let reaper = new Reaper(enemyCoordinate[0], enemyCoordinate[1], "reaper");
         enemiesList.push(reaper); //create new enemy
-      }      
+      }
     }
     if (spawnEnemyTurn % config.rogueSpawnTime == 0) {
       let enemyCoordinate = getSpawnCoordinates();
@@ -177,58 +176,73 @@ function isLastStep() {
   }
 }
 
+function replaceHero(event) {
+  if (event != null) {
+    if (event.code == "KeyW") {
+      heroDirection = "up";
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;
+    }
+    if (event.code == "KeyS") {
+      heroDirection = "down";
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;
+    }
+    if (event.code == "KeyA") {
+      heroDirection = "left";
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;
+    }
+    if (event.code == "KeyD") {
+      heroDirection = "right";
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
+      heroStepCounter++;
+    }
+
+    if (event.keyCode == 38) {
+      heroDirection = "up";
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
+    }
+    if (event.keyCode == 40) {
+      heroDirection = "down";
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
+    }
+    if (event.keyCode == 37) {
+      heroDirection = "left";
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
+    }
+    if (event.keyCode == 39) {
+      heroDirection = "right";
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
+      heroStepCounter++;
+    }
+    drawRemainingSteps();
+    isLastStep();
+  }
+}
+
 
 let heroDirection = "none";
+let lastEvent;
 /**
  * @function movementButtonController
  * @memberof MovementFunctions
  * @description Event listener for move buttons
  */
 document.addEventListener("keydown", function (event) {
-  if (event.code == "KeyW") {
-    heroDirection = "up";
-    moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-    heroStepCounter++;
+  if (event.code != "Space") {
+    lastEvent = event;
+    replaceHero(lastEvent);
   }
-  if (event.code == "KeyS") {
-    heroDirection = "down";
-    moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-    heroStepCounter++;
-  }
-  if (event.code == "KeyA") {
-    heroDirection = "left";
-    moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-    heroStepCounter++;
-  }
-  if (event.code == "KeyD") {
-    heroDirection = "right";
-    moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-    heroStepCounter++;
-  }
-
-  if (event.keyCode == 38) {
-    heroDirection = "up";
-    moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-    heroStepCounter++;
-  }
-  if (event.keyCode == 40) {
-    heroDirection = "down";
-    moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-    heroStepCounter++;
-  }
-  if (event.keyCode == 37) {
-    heroDirection = "left";
-    moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-    heroStepCounter++;
-  }
-  if (event.keyCode == 39) {
-    heroDirection = "right";
-    moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-    heroStepCounter++;
-  }
-  drawRemainingSteps();
-  isLastStep();
 });
 
-moveHero(firstHeroCoordinates, "firstHero"); //first turn generate
+if (config.mode == "hard") {
+  setInterval(() => {
+    replaceHero(lastEvent);
+  }, config.heroTurnInterval);
+}
+moveHero(firstHeroCoordinates, "firstHero"); //spawn heroes
 moveHero(secondHeroCoordinates, "secondHero");

@@ -3,12 +3,14 @@ let gameModeButtons = document.getElementsByClassName("game-mode");
 
 (() => {
   if (localStorage.getItem("easy-mode") == "true") {  
-    gameModeButtons[0].classList.add("js-active");
-    gameModeButtons[1].classList.remove("js-active");
+    gameModeButtons[0].classList.add("js-active"); //easy mode active
+    gameModeButtons[1].classList.remove("js-active"); // disable
+    config.mode = "easy";
   } 
   if (localStorage.getItem("hard-mode") == "true") {    
-    gameModeButtons[0].classList.remove("js-active");
-    gameModeButtons[1].classList.add("js-active");
+    gameModeButtons[0].classList.remove("js-active"); // disable
+    gameModeButtons[1].classList.add("js-active"); //hard mode active
+    config.mode = "hard";
   }
 })();
 
