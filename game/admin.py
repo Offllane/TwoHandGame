@@ -13,7 +13,7 @@ class CustomUserAdmin(UserAdmin):
     list_display = ['username', 'email', 'score']
     fieldsets = UserAdmin.fieldsets + (
         (None, {
-            'fields':('score', 'date_of_score', 'hardmode_score', 'hardmode_date_of_score')
+            'fields':('score', 'date_of_score',)
         }),
     )
 

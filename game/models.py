@@ -13,9 +13,7 @@ class CustomUser(AbstractUser):
     score = models.PositiveIntegerField('score', default = 0)
     date_of_score = models.CharField('date of record', default = datetime.date.today().strftime("%d.%m.%Y"), blank = False, max_length = 100)
     hardmode_score = models.PositiveIntegerField ('hardmode score', default = 0)
-    hardmode_date_of_score = models.CharField ('date of record(hardmode)',
-                                               default = datetime.date.today ().strftime ("%d.%m.%Y"), blank = False,
-                                               max_length = 100)
+
 
 
 
