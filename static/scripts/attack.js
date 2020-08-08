@@ -4,7 +4,13 @@
 
 let attackZoneFieldsList = []; // contain fields which contain class attack-area
 
-
+    $.ajax({
+    url: 'index/',
+    type: 'POST',
+    data: {'mode':config.mode },
+    dataType: 'text',
+    cache: false
+  });
 /**
  * Find x for each y used two point straight line equation
  * @memberof AttackFunctions
@@ -160,7 +166,7 @@ function addPoints(quantity)
   $.ajax({
     url: 'update_score/',
     type: 'POST',
-    data: { 'score': points },
+    data: { 'score': points, 'mode':config.mode },
     dataType: 'text',
     cache: false
   });

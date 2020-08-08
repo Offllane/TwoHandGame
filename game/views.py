@@ -8,16 +8,31 @@ from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
 from game.forms import UserRegistrationForm, LoginForm
-from game.models import  CustomUser
+from game.models import CustomUser
 
 from django.contrib.auth.decorators import login_required
 
 
+@csrf_exempt
 @login_required(login_url="/login")
 def index(request):
-    players = CustomUser.objects.all()
-    players = players.order_by('score').reverse()
-    return render(request,'game/index.html', {'players':players})
+
+    players = CustomUser.objects.all ()
+    players = players.order_by ('score').reverse ()
+    players_hardmode = players.order_by ('hardmode_score')
+
+    current_player = CustomUser.objects.get(username = request.user)
+
+    if request.method == 'POST':
+        mode = request.POST['mode']
+        current_player.gamemode = mode
+        current_player.save()
+        print("Method POST")
+        redirect('index')
+        # return render (request, 'game/index.html', {'players': players, 'hard_players': players_hardmode})
+
+    print ("Mode of player", current_player.gamemode)
+    return render(request,'game/index.html', {'players':players, 'hard_players': players_hardmode, 'mode': current_player})
 
 
 def user_login(request):
@@ -65,13 +80,20 @@ def logoutUser(request):
 def update_score(request):
     if request.method == 'POST':
         data = request.POST['score']
+        mode = request.POST['mode']
         print('Score:', data)
         player = CustomUser.objects.get(username=request.user)
         print('Player:', player)
-        if int(data) > int(player.score):
-            player.date_of_score = datetime.date.today().strftime("%d.%m.%Y")
-            player.score = data
-            player.save()
-        print('Score player:', player.score)
+        if mode == 'easy':
+            if int(data) > int(player.score):
+                player.date_of_score = datetime.date.today().strftime("%d.%m.%Y")
+                player.score = data
+                player.save()
+            print('Score player:', player.score)
+        if mode == 'hard':
+            if int(data) > int(player.hardmode_score):
+                player.hardmode_date_of_score = datetime.date.today().strftime('%d.%m.%Y')
+                player.hardmode_score = data
+                player.save()
         return redirect('index')
     return redirect('index')

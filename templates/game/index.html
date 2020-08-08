@@ -18,6 +18,7 @@
 
 {% block content %}
 
+    current mode: {{ mode.gamemode }}
 <body>
   <section class="loose-page">
     <section class="loose-image"></section>
@@ -66,6 +67,7 @@
             alt=""></a>
       </div>
       <div class="b-popup" id="popup2">
+
         <div class="b-popup-content">
           <section class="popup-header">
             Best players:
@@ -73,18 +75,42 @@
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
           </section>
           <section class="best-players">
-            {% for player in players %}
-            {%  if player.date_of_score == 'date_of_score' %}
-            <section class="username">{{ player.username }} - {{ player.score }}</section>
-            {% else %}
-            <section class="username">{{ player.username }} - {{ player.score }}</section>
-            <section class="date-of-score">{{ player.date_of_score }}</section>
+          {% if mode.gamemode == 'easy' %}
+              {% for player in players %}
+                {%  if player.date_of_score == 'date_of_score' %}
+                <section class="username">{{ player.username }} - {{ player.score }}</section>
+                {% else %}
+                <section class="username">{{ player.username }} - {{ player.score }}</section>
+                <section class="date-of-score">{{ player.date_of_score }}</section>
 
-            {% endif %}
+                {% endif %}
             {% endfor %}
+          {% else %}
+              {% for player in hard_players %}
+                {%  if player.date_of_score == 'date_of_score' %}
+                <section class="username">{{ player.username }} - {{ player.hardmode_score }}</section>
+                {% else %}
+                <section class="username">{{ player.username }} - {{ player.hardmode_score }}</section>
+                <section class="date-of-score">{{ player.hardmode_date_of_score }}</section>
+
+                {% endif %}
+            {% endfor %}
+          {% endif %}
+
+{#            {% for player in players %}#}
+{#                {%  if player.date_of_score == 'date_of_score' %}#}
+{#                <section class="username">{{ player.username }} - {{ player.score }}</section>#}
+{#                {% else %}#}
+{#                <section class="username">{{ player.username }} - {{ player.score }}</section>#}
+{#                <section class="date-of-score">{{ player.date_of_score }}</section>#}
+{##}
+{#                {% endif %}#}
+{#            {% endfor %}#}
           </section>
+
         </div>
       </div>
+
     </section>
     <section class="additional-inform-field">
       <div class="b-container">
@@ -157,7 +183,8 @@
     <section class="mode-buttons">
       <section class="easy-mode game-mode js-active">Eazy mode</section>
       <section class="hard-mode game-mode"> Hard mode</section>
-    </section>
+
+
   </section>
   <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
   <script src="{% static 'scripts/optimization.js' %}"></script>
