@@ -1,9 +1,11 @@
 import datetime
+import json
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
@@ -21,18 +23,36 @@ def index(request):
     players = players.order_by ('score').reverse ()
     players_hardmode = players.order_by ('hardmode_score')
 
-    current_player = CustomUser.objects.get(username = request.user)
+    # current_player = CustomUser.objects.get(username = request.user)
+    #
+    # if request.method == 'POST':
+    #     mode = request.POST['mode']
+    #     current_player.gamemode = mode
+    #     current_player.save()
+    #     print("Method POST")
+    #     html = render_to_string ('game/index.html', {'players':players, 'hard_players': players_hardmode, 'mode': current_player})
+    #     return HttpResponse(html)
+    #
+    # print ("Mode of player", current_player.gamemode)
 
+    return render(request,'game/index.html', {'players':players, 'hard_players': players_hardmode})
+
+
+@csrf_exempt
+@login_required(login_url = "/login")
+def gamemode(request):
     if request.method == 'POST':
         mode = request.POST['mode']
+        current_player = CustomUser.objects.get(username = request.user)
         current_player.gamemode = mode
         current_player.save()
-        print("Method POST")
-        redirect('index')
-        # return render (request, 'game/index.html', {'players': players, 'hard_players': players_hardmode})
 
-    print ("Mode of player", current_player.gamemode)
-    return render(request,'game/index.html', {'players':players, 'hard_players': players_hardmode, 'mode': current_player})
+        print("Method POST")
+        print("Gamemode:", current_player.gamemode)
+
+        html = render_to_string('game/index.html', {'mode': mode})
+        return HttpResponse(html)
+    return redirect('index')
 
 
 def user_login(request):
@@ -95,5 +115,6 @@ def update_score(request):
                 player.hardmode_date_of_score = datetime.date.today().strftime('%d.%m.%Y')
                 player.hardmode_score = data
                 player.save()
+        print(mode)
         return redirect('index')
     return redirect('index')
