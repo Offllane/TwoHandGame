@@ -16,6 +16,6 @@ class CustomUser(AbstractUser):
     hardmode_date_of_score = models.CharField ('date of record(hardmode)',
                                                default = datetime.date.today ().strftime ("%d.%m.%Y"), blank = False,
                                                max_length = 100)
-    # gamemode = models.CharField('game mode', default = 'easy', max_length = 100)
+
 
 

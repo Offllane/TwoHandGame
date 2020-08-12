@@ -23,36 +23,7 @@ def index(request):
     players = players.order_by ('score').reverse ()
     players_hardmode = players.order_by ('hardmode_score')
 
-    # current_player = CustomUser.objects.get(username = request.user)
-    #
-    # if request.method == 'POST':
-    #     mode = request.POST['mode']
-    #     current_player.gamemode = mode
-    #     current_player.save()
-    #     print("Method POST")
-    #     html = render_to_string ('game/index.html', {'players':players, 'hard_players': players_hardmode, 'mode': current_player})
-    #     return HttpResponse(html)
-    #
-    # print ("Mode of player", current_player.gamemode)
-
     return render(request,'game/index.html', {'players':players, 'hard_players': players_hardmode})
-
-
-@csrf_exempt
-@login_required(login_url = "/login")
-def gamemode(request):
-    if request.method == 'POST':
-        mode = request.POST['mode']
-        current_player = CustomUser.objects.get(username = request.user)
-        current_player.gamemode = mode
-        current_player.save()
-
-        print("Method POST")
-        print("Gamemode:", current_player.gamemode)
-
-        html = render_to_string('game/index.html', {'mode': mode})
-        return HttpResponse(html)
-    return redirect('index')
 
 
 def user_login(request):
