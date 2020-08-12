@@ -18,16 +18,15 @@
 
 {% block content %}
 
-    current mode: {{ mode.gamemode }}
 <body>
-  <section class="loose-page">
-    <section class="loose-image"></section>
-    <section class="loose-page-score"> Your score is: 0</section>
-    <section class="under-button"> Try again</section>
+  <div class="loose-page">
+    <div class="loose-image"></div>
+    <div class="loose-page-score"> Your score is: 0</div>
+    <div class="under-button"> Try again</div>
     <button onclick="window.location.reload()" class="button-reload"></button>
-  </section>
-  <section class="additional-inform">
-    <section style="margin-top: 20px;" class="additional-inform-field">
+  </div>
+  <div class="additional-inform">
+    <div style="margin-top: 20px;" class="additional-inform-field">
       <div class="b-container">
         Help
         <a href="javascript:HelpPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}"
@@ -35,32 +34,32 @@
       </div>
       <div class="b-popup" id="popup1">
         <div class="b-popup-content">
-          <section class="popup-header">
+          <div class="popup-header">
             Help
             <a class="popup-cancel" href="javascript:HelpPopUpHide()"><img class="popup-cancel-image"
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
-          </section>
-          <section class="popup-main-inform">
-            <section>
+          </div>
+          <div class="popup-main-inform">
+            <div>
               <p style="font-weight: bold;">Controls</p>
               <p>Use W,A,S,D to move first hero.</p>
               <p>Use arrows to move second hero.</p>
               <p>Use space to hit enemies.</p>
-            </section>
+            </div>
 
-            <section>
+            <div>
               <p style="font-weight: bold;">How to play</p>
               <p>Run from enemies.</p>
               <p>Hit them to get points.</p>
               <p>Enemies turn on every fourth turn of any hero (you can see at rigth).</p>
               <p>You have some lifes at start. You loose one of them, if enemy catch you.</p>
               <p>Two and more enemies can stay at the same field. If they catch you, you get full damage.</p>
-            </section>
-          </section>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="additional-inform-field">
+    </div>
+    <div class="additional-inform-field">
       <div class="b-container">
         Best Players
         <a href="javascript:TopPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/cup.png'%}"
@@ -69,50 +68,58 @@
       <div class="b-popup" id="popup2">
 
         <div class="b-popup-content">
-          <section class="popup-header">
-            Best players:
-            <a class="popup-cancel" href="javascript:TopPopUpHide()"><img class="popup-cancel-image"
+          <div class="popup-header-best-players">
+            <div class="best-players_easy-mode best-players_active">
+              Easy mode
+            </div>
+            <div class="best-players_hard-mode">
+              Hard mode
+            </div>
+            <a class="popup-cancel-best-players" href="javascript:TopPopUpHide()"><img class="popup-cancel-image"
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
-          </section>
-          <section class="best-players">
-          {% if mode.gamemode == 'easy' %}
-              {% for player in players %}
-                {%  if player.date_of_score == 'date_of_score' %}
-                <section class="username">{{ player.username }} - {{ player.score }}</section>
-                {% else %}
-                <section class="username">{{ player.username }} - {{ player.score }}</section>
-                <section class="date-of-score">{{ player.date_of_score }}</section>
+          </div>
+          <div class="best-players_easy-mode-score">
+            {% if mode.gamemode == 'easy' %}
+            {% for player in players %}
+            {%  if player.date_of_score == 'date_of_score' %}
+            <div class="username">{{ player.username }} - {{ player.score }}</div>
+            {% else %}
+            <div class="username">{{ player.username }} - {{ player.score }}</div>
+            <div class="date-of-score">{{ player.date_of_score }}</div>
 
-                {% endif %}
+            {% endif %}
             {% endfor %}
-          {% else %}
-              {% for player in hard_players %}
-                {%  if player.date_of_score == 'date_of_score' %}
-                <section class="username">{{ player.username }} - {{ player.hardmode_score }}</section>
-                {% else %}
-                <section class="username">{{ player.username }} - {{ player.hardmode_score }}</section>
-                <section class="date-of-score">{{ player.hardmode_date_of_score }}</section>
+            {% else %}
+            {% for player in hard_players %}
+            {%  if player.date_of_score == 'date_of_score' %}
+            <div class="username">{{ player.username }} - {{ player.hardmode_score }}</div>
+            {% else %}
+            <div class="username">{{ player.username }} - {{ player.hardmode_score }}</div>
+            <div class="date-of-score">{{ player.hardmode_date_of_score }}</div>
 
-                {% endif %}
+            {% endif %}
             {% endfor %}
-          {% endif %}
+            {% endif %}
 
-{#            {% for player in players %}#}
-{#                {%  if player.date_of_score == 'date_of_score' %}#}
-{#                <section class="username">{{ player.username }} - {{ player.score }}</section>#}
-{#                {% else %}#}
-{#                <section class="username">{{ player.username }} - {{ player.score }}</section>#}
-{#                <section class="date-of-score">{{ player.date_of_score }}</section>#}
-{##}
-{#                {% endif %}#}
-{#            {% endfor %}#}
-          </section>
+            {#            {% for player in players %}#}
+            {#                {%  if player.date_of_score == 'date_of_score' %}#}
+            {#                <div class="username">{{ player.username }} - {{ player.score }}</div>#}
+            {#                {% else %}#}
+            {#                <div class="username">{{ player.username }} - {{ player.score }}</div>#}
+            {#                <div class="date-of-score">{{ player.date_of_score }}</div>#}
+            {##}
+            {#                {% endif %}#}
+            {#            {% endfor %}#}
+          </div>
 
+          <div class="best-players_hard-mode-score">
+            kekekekekekekekekekeekek
+          </div>
         </div>
       </div>
 
-    </section>
-    <section class="additional-inform-field">
+    </div>
+    <div class="additional-inform-field">
       <div class="b-container">
         Enemies
         <a href="javascript:EnemyPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/enemy.png'%}"
@@ -120,85 +127,87 @@
       </div>
       <div class="b-popup" id="popup3">
         <div class="b-popup-content">
-          <section class="popup-header">
+          <div class="popup-header">
             Enemies:
             <a class="popup-cancel" href="javascript:EnemyPopUpHide()"><img class="popup-cancel-image"
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
-          </section>
-          <section class="popup-main">
-            <section class="enemy-card">
-              <section class="enemy-header">
-                <section class="enemy-avatar">
+          </div>
+          <div class="popup-main">
+            <div class="enemy-card">
+              <div class="enemy-header">
+                <div class="enemy-avatar">
                   <img src="../../static/img/gameareaObjects/reaper.png" alt="">
-                </section>
-                <section class="enemy-name"> Reaper</section>
-              </section>
-              <section class="enemy-description">
+                </div>
+                <div class="enemy-name"> Reaper</div>
+              </div>
+              <div class="enemy-description">
                 Most common enemy. <br>
                 Slowly move to hero side.
                 Quicly spawn.
                 Spawn with friend;
-              </section>
-            </section>
-            <section class="enemy-card">
-              <section class="enemy-header">
-                <section class="enemy-avatar">
+              </div>
+            </div>
+            <div class="enemy-card">
+              <div class="enemy-header">
+                <div class="enemy-avatar">
                   <img src="../../static/img/gameareaObjects/rogue.png" alt="">
-                </section>
-                <section class="enemy-name"> Rogue</section>
-              </section>
-              <section class="enemy-description">
+                </div>
+                <div class="enemy-name"> Rogue</div>
+              </div>
+              <div class="enemy-description">
                 Common enemy. <br>
                 Faster than reaper.
                 Quicly spawn.
                 Can miss the hero.
-              </section>
-            </section>
-          </section>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="additional-inform-field">
+    </div>
+    <div class="additional-inform-field">
       <div class="b-container">
         Game website
         <a href="https://lit-hollows-53777.herokuapp.com/"><img style="width:25px; height: 25px;"
             src="../../static/img/websiteImage.png" alt="website"></a>
       </div>
-    </section>
+    </div>
 
-  </section>
-  <section class="main-inform">
-    <section class="user">
-      <section class="user-image"></section>
+  </div>
+  <div class="main-inform">
+    <div class="user">
+      <div class="user-image"></div>
       {% if request.user.is_authenticated %}
       {{ request.user }}
 
       {% else %}
       Not logged
       {% endif %}
-    </section>
-    <section class="score"> Your score is: 0</section>
-    <section class="lifes"> Lifes remainig: 10</section>
+    </div>
+    <div> Current mode: {{ mode.gamemode }}</div>
+    <div class="score"> Your score is: 0</div>
+    <div class="lifes"> Lifes remainig: 10</div>
     Enemy turn in: <span class="steps-quantity"></span>
-    <section class="mode-buttons">
-      <section class="easy-mode game-mode js-active">Eazy mode</section>
-      <section class="hard-mode game-mode"> Hard mode</section>
+    <div class="mode-buttons">
+      <div class="easy-mode game-mode js-active">Easy mode</div>
+      <div class="hard-mode game-mode"> Hard mode</div>
 
 
-  </section>
-  <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
-  <script src="{% static 'scripts/optimization.js' %}"></script>
-  <script src="{% static 'scripts/config.js' %}"></script>
-  <script src="{% static 'scripts/createField.js' %}"></script>
-  <script src="{% static 'scripts/popup.js' %}"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
+    <script src="{% static 'scripts/optimization.js' %}"></script>
+    <script src="{% static 'scripts/config.js' %}"></script>
+    <script src="{% static 'scripts/createField.js' %}"></script>
+    <script src="{% static 'scripts/popup.js' %}"></script>
+    <script src="{% static 'scripts/popupSwitchMode.js' %}"></script>
 
-  <script src="{% static 'scripts/enemies/enemy.js' %}"></script>
-  <script src="{% static 'scripts/enemies/reaper.js' %}"></script>
-  <script src="{% static 'scripts/enemies/rogue.js' %}"></script>
+    <script src="{% static 'scripts/enemies/enemy.js' %}"></script>
+    <script src="{% static 'scripts/enemies/reaper.js' %}"></script>
+    <script src="{% static 'scripts/enemies/rogue.js' %}"></script>
 
-  <script src="{% static 'scripts/switchGameMode.js' %}"></script>
-  <script src="{% static 'scripts/attack.js' %}"></script>
-  <script src="{% static 'scripts/move.js' %}"></script>
+    <script src="{% static 'scripts/switchGameMode.js' %}"></script>
+    <script src="{% static 'scripts/attack.js' %}"></script>
+    <script src="{% static 'scripts/move.js' %}"></script>
 </body>
 {% endblock %}
 

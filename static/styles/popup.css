@@ -27,6 +27,16 @@
   padding: 10px;
 }
 
+.popup-header-best-players {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.popup-cancel-best-players {
+  padding: 10px;
+}
+
 .popup-cancel-image {
   width: 25px;
   height: 25px;
@@ -64,6 +74,7 @@
   height: 30px;
   background-image: url(../img/garment.png);
   opacity: .5;
+  margin-left: 10px;
 }
 
 .username:nth-child(1):before {
@@ -74,6 +85,7 @@
   height: 30px;
   background-image: url(../img/goldCrown.png);
   opacity: 1;
+  margin-left: 10px;
 }
 
 .username:nth-child(3):before {
@@ -84,6 +96,7 @@
   height: 30px;
   background-image: url(../img/silverCrown.png);
   opacity: 1;
+  margin-left: 10px;
 }
 
 .username:nth-child(5):before {
@@ -94,6 +107,7 @@
   height: 30px;
   background-image: url(../img/bronzeCrown.png);
   opacity: 1;
+  margin-left: 10px;
 }
 
 .enemy-card {
