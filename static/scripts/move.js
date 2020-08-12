@@ -235,7 +235,9 @@ let lastEvent;
 document.addEventListener("keydown", function (event) {
   if (event.code != "Space") {
     lastEvent = event;
-    replaceHero(lastEvent);
+    if (config.mode == "easy") {
+      replaceHero(lastEvent);
+    }    
   }
 });
 

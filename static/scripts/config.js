@@ -1,6 +1,6 @@
 let config = {
   mode: "easy",
-  heroTurnInterval:500,
+  heroTurnInterval:350,
   step: 4,
   heroSpeed: 1,
   lifeQuantity: 10,
