@@ -26,6 +26,7 @@ function TopPopUpHide() {
 
 function TopPopUpShow() {
   $("#popup2").show();
+  showEasyModeScore();
 }
 
 function EnemyPopUpHide() {

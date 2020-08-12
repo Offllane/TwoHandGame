@@ -29,7 +29,7 @@
     <div style="margin-top: 20px;" class="additional-inform-field">
       <div class="b-container">
         Help
-        <a href="javascript:HelpPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/question.png'%}"
+        <a href="javascript:HelpPopUpShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/2.png'%}"
             alt=""></a>
       </div>
       <div class="b-popup" id="popup1">
@@ -62,7 +62,7 @@
     <div class="additional-inform-field">
       <div class="b-container">
         Best Players
-        <a href="javascript:TopPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/cup.png'%}"
+        <a href="javascript:TopPopUpShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/3.png'%}"
             alt=""></a>
       </div>
       <div class="b-popup" id="popup2">
@@ -78,26 +78,18 @@
             <a class="popup-cancel-best-players" href="javascript:TopPopUpHide()"><img class="popup-cancel-image"
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
           </div>
-          <div class="best-players_easy-mode-score">
+          <div class="best-players_easy-mode-score best-players">
 
             {% for player in players %}
-
                 <div class="username">{{ player.username }} - {{ player.score }}</div>
                 <div class="date-of-score">{{ player.date_of_score }}</div>
-
-
             {% endfor %}
-
-
           </div>
 
-          <div class="best-players_hard-mode-score">
+          <div class="best-players_hard-mode-score best-players">
               {% for player in hard_players %}
-
                 <div class="username">{{ player.username }} - {{ player.hardmode_score }}</div>
                 <div class="date-of-score">{{ player.hardmode_date_of_score }}</div>
-
-
             {% endfor %}
           </div>
         </div>
@@ -107,7 +99,7 @@
     <div class="additional-inform-field">
       <div class="b-container">
         Enemies
-        <a href="javascript:EnemyPopUpShow()"><img style="width:25px; height: 25px;" src="{% static 'img/enemy.png'%}"
+        <a href="javascript:EnemyPopUpShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/3.2.png'%}"
             alt=""></a>
       </div>
       <div class="b-popup" id="popup3">
@@ -153,8 +145,8 @@
     <div class="additional-inform-field">
       <div class="b-container">
         Game website
-        <a href="https://lit-hollows-53777.herokuapp.com/"><img style="width:25px; height: 25px;"
-            src="../../static/img/websiteImage.png" alt="website"></a>
+        <a href="https://lit-hollows-53777.herokuapp.com/"><img style="width:40px; height: 40px;" src="{% static 'img/shields/3.3.png'%}"
+           alt="website"></a>
       </div>
     </div>
 
