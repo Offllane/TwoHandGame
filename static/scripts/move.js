@@ -180,45 +180,39 @@ function replaceHero(event) {
   if (event != null) {
     if (event.code == "KeyW") {
       heroDirection = "up";
-      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-      heroStepCounter++;
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);        
     }
     if (event.code == "KeyS") {
       heroDirection = "down";
-      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-      heroStepCounter++;
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);       
     }
     if (event.code == "KeyA") {
       heroDirection = "left";
-      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-      heroStepCounter++;
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);         
     }
     if (event.code == "KeyD") {
       heroDirection = "right";
-      moveHero(firstHeroCoordinates, "firstHero", heroDirection);
-      heroStepCounter++;
+      moveHero(firstHeroCoordinates, "firstHero", heroDirection);          
     }
 
     if (event.keyCode == 38) {
       heroDirection = "up";
-      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-      heroStepCounter++;
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);          
     }
     if (event.keyCode == 40) {
       heroDirection = "down";
-      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-      heroStepCounter++;
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);      
+      return;
     }
     if (event.keyCode == 37) {
       heroDirection = "left";
-      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-      heroStepCounter++;
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);            
     }
     if (event.keyCode == 39) {
       heroDirection = "right";
-      moveHero(secondHeroCoordinates, "secondHero", heroDirection);
-      heroStepCounter++;
+      moveHero(secondHeroCoordinates, "secondHero", heroDirection);           
     }
+    heroStepCounter++;
     drawRemainingSteps();
     isLastStep();
   }
@@ -246,5 +240,7 @@ if (config.mode == "hard") {
     replaceHero(lastEvent);
   }, config.heroTurnInterval);
 }
-moveHero(firstHeroCoordinates, "firstHero"); //spawn heroes
+
+//spawn heroes
+moveHero(firstHeroCoordinates, "firstHero"); 
 moveHero(secondHeroCoordinates, "secondHero");
