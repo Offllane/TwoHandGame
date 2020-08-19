@@ -23,7 +23,7 @@ function clearMovement(heroPosition) {
 /**
  * Check hero position and make heroSpeed 0 if hero want to out from game area
  * @memberof MovementFunctions
- * @param {array} heroCoordinates - two hero coordinates
+ * @param {array} heroCoordinates - two coordinates of hero
  * @param {string} direction - movement direction
  * @returns {int} heroSpeed
  */
@@ -97,7 +97,7 @@ function rotateSecondHero(direction, heroPosition) {
 /**
  * Replace hero picture
  * @memberof MovementFunctions
- * @param {array} heroCoordinates - two hero coordinates 
+ * @param {array} heroCoordinates - two coordinates of hero
  * @param {string} heroName - hero name
  * @param {string} direction -hero direction
  */
@@ -143,7 +143,7 @@ function moveHero(heroCoordinates, heroName, direction) {
 }
 
 /**
- * Show steps quantity on the screen
+ * Redraw steps quantity on the screen
  */
 function drawRemainingSteps() {
   let remainingSteps = config.step - heroStepCounter;
@@ -175,6 +175,12 @@ function isLastStep() {
     }
   }
 }
+
+/**
+ * detemines which buttons is pressed and call moveHero
+ * @memberof MovementFunctions
+ * @param {event} event - which button is pressed
+ */
 
 function replaceHero(event) {
   if (event != null) {
