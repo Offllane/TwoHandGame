@@ -7,7 +7,6 @@ class Reaper extends Enemy {
   move(targetCoordinates) {
     super.clearField();
     let direction = super.setDirection(targetCoordinates);
-
     switch (direction) // replace position 
     {
       case "up":

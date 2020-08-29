@@ -88,7 +88,8 @@ function setNewAvatar(avatarImageNameArray: Array<string>): void {
   let randomAvatarIndex = randomInteger(0, avatarImageNameArray.length - 1); //get random index from array
   let randomAvatar = avatarImageNameArray[randomAvatarIndex]; //get element from array with random index
   let userImageStyle = avatarImagePath + randomAvatar;
-  document.getElementsByClassName("user-image")[0].style.backgroundImage = `url('${userImageStyle}')`;
+  let userImage: HTMLElement = document.getElementsByClassName("user-image")[0] as HTMLElement;
+  userImage.style.backgroundImage = `url('${userImageStyle}')`;
 }
 setNewAvatar(avatarImageNameArray);
 
@@ -118,7 +119,7 @@ function setAreaSize(): number {
  * @param {number} areaSize - {@link areaSize} of game field
  */
 function createGameArea(areaSize: number): void {
-  let gameArea: Element = document.createElement("section"); //gamearea
+  let gameArea: HTMLElement = document.createElement("section"); //gamearea
   gameArea.classList.add("game-area");
   gameArea.style.width = areaSize + 'px';
   gameArea.style.height = areaSize + 'px';
@@ -127,12 +128,12 @@ function createGameArea(areaSize: number): void {
 
   for (let i = 0; i < 900; i++) //add fields to game area
   {
-    let field:Element = document.createElement("div");
+    let field:HTMLElement = document.createElement("div");
     field.classList.add("field");
     field.style.width = areaSize / 30 + 'px';
     field.style.height = areaSize / 30 + 'px';
     field.style.backgroundSize = areaSize / 30 - 5 + 'px';
-    field.style.zIndex = -1;
+    field.style.zIndex = "-1";
     gameArea.appendChild(field);
   }
 }
@@ -168,13 +169,13 @@ setCoordinates();
  * @param {int} y - y coordinate
  * @return {Element} - DOM element(field of game zone)
  */
-function findField(x: number, y: number): Element | null {
-  return document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
+function findField(x: number, y: number): Element {
+  return document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]') as HTMLElement;
 }
 
-const popup: Element = document.getElementsByClassName("loose-page")[0];
-popup.style.height = window.innerHeight;
-popup.style.width = window.innerWidth;
+const popup: HTMLElement = document.getElementsByClassName("loose-page")[0] as HTMLElement;
+popup.style.height = window.innerHeight.toString();
+popup.style.width = window.innerWidth.toString();
 
 let firstHeroCoordinates = [15, 1];
 let secondHeroCoordinates = [15, 30];

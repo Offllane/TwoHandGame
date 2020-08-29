@@ -2,7 +2,6 @@ class Rogue extends Enemy {
   move(targetCoordinates) {
     super.clearField();
     let direction = super.setDirection(targetCoordinates);
-
     try {
       switch (direction) // replace position 
       {

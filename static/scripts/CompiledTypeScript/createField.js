@@ -1,11 +1,7 @@
-/* jshint node: true */
-/* jshint browser: true */
-"use strict";
-
 /**
  * @namespace CreateGameField
  */
-var backgroundNamesArray = [
+let backgroundNamesArray = [
     "static/img/backgrounds/desert.png",
     "static/img/backgrounds/pesok_barhany_pustynia_162742_1920x1080.jpg",
     "static/img/backgrounds/pesok_pustynia_barhany_178480_1920x1080.jpg",
@@ -21,7 +17,7 @@ var backgroundNamesArray = [
  * @param max end result will be lesser than this number
  */
 function randomInteger(min, max) {
-    var rand = min - 0.5 + Math.random() * (max - min + 1);
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
 }
 /**
@@ -33,13 +29,13 @@ function randomInteger(min, max) {
  * setNewBackground([1.jpg, 2.png]);
  */
 function setNewBackground(array) {
-    var randomBackgroundIndex = Math.floor(Math.random() * array.length); //get random index from array
-    var randomBackground = array[randomBackgroundIndex]; //get element from array with random index
-    document.body.style.backgroundImage = "url('" + randomBackground + "')"; // set body background image
+    let randomBackgroundIndex = Math.floor(Math.random() * array.length); //get random index from array
+    let randomBackground = array[randomBackgroundIndex]; //get element from array with random index
+    document.body.style.backgroundImage = `url('${randomBackground}')`; // set body background image
 }
 setNewBackground(backgroundNamesArray);
-var avatarImagePath = "static/img/avatars/";
-var avatarImageNameArray = [
+let avatarImagePath = "static/img/avatars/";
+let avatarImageNameArray = [
     "0_Blacksmith_Chagrin_027.png",
     "0_Blacksmith_Idle Blinking_016.png",
     "0_Blacksmith_Idle Blinking_016.png",
@@ -81,10 +77,11 @@ var avatarImageNameArray = [
  * @param {Array: string} avatarImageNameArray array with avatar image names
  */
 function setNewAvatar(avatarImageNameArray) {
-    var randomAvatarIndex = randomInteger(0, avatarImageNameArray.length - 1); //get random index from array
-    var randomAvatar = avatarImageNameArray[randomAvatarIndex]; //get element from array with random index
-    var userImageStyle = avatarImagePath + randomAvatar;
-    document.getElementsByClassName("user-image")[0].style.backgroundImage = "url('" + userImageStyle + "')";
+    let randomAvatarIndex = randomInteger(0, avatarImageNameArray.length - 1); //get random index from array
+    let randomAvatar = avatarImageNameArray[randomAvatarIndex]; //get element from array with random index
+    let userImageStyle = avatarImagePath + randomAvatar;
+    let userImage = document.getElementsByClassName("user-image")[0];
+    userImage.style.backgroundImage = `url('${userImageStyle}')`;
 }
 setNewAvatar(avatarImageNameArray);
 //=============================================================================================================
@@ -94,10 +91,11 @@ setNewAvatar(avatarImageNameArray);
  * @returns {nubmer} game field square size
  */
 function setAreaSize() {
-    var areaSize;
+    let areaSize;
     if (window.innerHeight < window.innerWidth / 2) {
         areaSize = window.innerHeight - 50; //set game square size like screen height 
-    } else {
+    }
+    else {
         areaSize = window.innerWidth / 2; //set game square size like half screen width
     }
     return areaSize;
@@ -109,38 +107,39 @@ function setAreaSize() {
  * @param {number} areaSize - {@link areaSize} of game field
  */
 function createGameArea(areaSize) {
-    var gameArea = document.createElement("section"); //gamearea
+    let gameArea = document.createElement("section"); //gamearea
     gameArea.classList.add("game-area");
     gameArea.style.width = areaSize + 'px';
     gameArea.style.height = areaSize + 'px';
     gameArea.style.backgroundSize = areaSize / 30 + 'px';
     document.body.appendChild(gameArea);
-    for (var i = 0; i < 900; i++) //add fields to game area
-    {
-        var field = document.createElement("div");
+    for (let i = 0; i < 900; i++) //add fields to game area
+     {
+        let field = document.createElement("div");
         field.classList.add("field");
         field.style.width = areaSize / 30 + 'px';
         field.style.height = areaSize / 30 + 'px';
         field.style.backgroundSize = areaSize / 30 - 5 + 'px';
-        field.style.zIndex = -1;
+        field.style.zIndex = "-1";
         gameArea.appendChild(field);
     }
 }
 createGameArea(setAreaSize());
-var fieldsArray = document.getElementsByClassName("field");
+const fieldsArray = document.getElementsByClassName("field");
 /**
  * set attributes posX and posY to all divs in game section from 1 to 30.
  * @memberof CreateGameField
  */
 function setCoordinates() {
-    var x = 1;
-    var y = 1;
-    for (var i = 0; i < fieldsArray.length; i++) {
+    let x = 1;
+    let y = 1;
+    for (let i = 0; i < fieldsArray.length; i++) {
         if (x < 30) {
             fieldsArray[i].setAttribute("posX", x.toString());
             fieldsArray[i].setAttribute("posY", y.toString());
             x++;
-        } else {
+        }
+        else {
             fieldsArray[i].setAttribute("posX", x.toString());
             fieldsArray[i].setAttribute("posY", y.toString());
             y++;
@@ -158,8 +157,8 @@ setCoordinates();
 function findField(x, y) {
     return document.querySelector('[posX = "' + x + '"][posY = "' + y + '"]');
 }
-var popup = document.getElementsByClassName("loose-page")[0];
-popup.style.height = window.innerHeight;
-popup.style.width = window.innerWidth;
-var firstHeroCoordinates = [15, 1];
-var secondHeroCoordinates = [15, 30];
+const popup = document.getElementsByClassName("loose-page")[0];
+popup.style.height = window.innerHeight.toString();
+popup.style.width = window.innerWidth.toString();
+let firstHeroCoordinates = [15, 1];
+let secondHeroCoordinates = [15, 30];

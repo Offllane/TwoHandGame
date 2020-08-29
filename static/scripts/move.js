@@ -155,12 +155,14 @@ let spawnEnemyTurn = 0;
 
 function isLastStep() {
   if (heroStepCounter + 1 >= config.step + 1) {
-    enemiesList.forEach(enemy => {
+    enemiesList.forEach(enemy => {      
       enemy.move(enemy.selectTarget());
     }); // enemies turn
     spawnEnemyTurn++;
     heroStepCounter = 0; //add new turns to heroes
     drawRemainingSteps(); // draw step quantity
+
+    //spawn reaper
     if (spawnEnemyTurn % config.reaperSpawnTime == 0) {
       for (let i = 0; i <= config.reaperSpawnQuantity; i++) {
         let enemyCoordinate = getSpawnCoordinates();
@@ -168,6 +170,8 @@ function isLastStep() {
         enemiesList.push(reaper); //create new enemy
       }
     }
+
+    //spawn rogue
     if (spawnEnemyTurn % config.rogueSpawnTime == 0) {
       let enemyCoordinate = getSpawnCoordinates();
       let rogue = new Rogue(enemyCoordinate[0], enemyCoordinate[1], "rogue");

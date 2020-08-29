@@ -3,8 +3,6 @@ const hardModeButton = document.querySelector(".best-players_hard-mode");
 const easyModeScore = document.querySelector(".best-players_easy-mode-score");
 const hardModeScore = document.querySelector(".best-players_hard-mode-score");
 
-console.log(hardModeButton);
-
 function showEasyModeScore() {
   easyModeScore.style.display = "block";
   hardModeScore.style.display = "none";
