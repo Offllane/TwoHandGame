@@ -185,6 +185,7 @@ document.addEventListener("keydown", function (event) {
 
       if (checkEnemiesCollision(element)) {
         let deadEnemy: number = enemiesList.findIndex(enemy => enemy.pos.x == parseInt(element.getAttribute("posx") as string) && enemy.pos.y == parseInt(element.getAttribute("posy") as string)); //find enemy with same position  
+        enemiesList[deadEnemy].clearField();
         enemiesList.splice(deadEnemy, 1);
         addPoints(1);
       }

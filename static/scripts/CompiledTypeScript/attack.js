@@ -154,6 +154,7 @@ document.addEventListener("keydown", function (event) {
             element.classList.add("attack-event");
             if (checkEnemiesCollision(element)) {
                 let deadEnemy = enemiesList.findIndex(enemy => enemy.pos.x == parseInt(element.getAttribute("posx")) && enemy.pos.y == parseInt(element.getAttribute("posy"))); //find enemy with same position  
+                enemiesList[deadEnemy].clearField();
                 enemiesList.splice(deadEnemy, 1);
                 addPoints(1);
             }
