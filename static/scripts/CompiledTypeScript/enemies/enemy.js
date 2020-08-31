@@ -35,9 +35,9 @@ class Enemy {
         let distanceToFirstHero = this.findDistance(x1, y1);
         let distanceToSecondHero = this.findDistance(x2, y2);
         if (distanceToFirstHero <= distanceToSecondHero) {
-            return distanceToFirstHero;
+            return firstHeroCoordinates;
         }
-        return distanceToSecondHero;
+        return secondHeroCoordinates;
     }
     /**
      * Check hero position

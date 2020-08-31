@@ -155,7 +155,7 @@ let spawnEnemyTurn = 0;
 
 function isLastStep() {
   if (heroStepCounter + 1 >= config.step + 1) {
-    enemiesList.forEach(enemy => {      
+    enemiesList.forEach(enemy => {  
       enemy.move(enemy.selectTarget());
     }); // enemies turn
     spawnEnemyTurn++;

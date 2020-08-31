@@ -10,7 +10,7 @@ interface IPosition {
 interface IEnemy {
   pos: IPosition;
   findDistance(x: number, y: number): number;
-  selectTarget(): number;
+  selectTarget(): Array<number>;
   setDirection(targetCoordinates: Array<number>): string;
   findCurrentPosition(posX: number, posY: number): void;
   clearField(): void;
@@ -48,7 +48,7 @@ class Enemy implements IEnemy {
   * @memberof EnemyFunctions
   * @returns {array} - coordinates of the hero
   */
-  selectTarget(): number {
+  selectTarget(): Array<number> {
     let x1, x2, y1, y2: number;
 
     x1 = firstHeroCoordinates[0];
@@ -60,9 +60,9 @@ class Enemy implements IEnemy {
     let distanceToSecondHero: number = this.findDistance(x2, y2);
 
     if (distanceToFirstHero <= distanceToSecondHero) {
-      return distanceToFirstHero;
+      return firstHeroCoordinates;
     }
-    return distanceToSecondHero;
+    return secondHeroCoordinates;
   }
 
   /**
