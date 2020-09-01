@@ -82,7 +82,7 @@ let avatarImageNameArray: Array<string> = [
 /**
  * @memberof CreateGameField
  * get random image name from array and set her to main screen
- * @param {Array: string} avatarImageNameArray array with avatar image names
+ * @param {Array} avatarImageNameArray[] array with avatar image names
  */
 function setNewAvatar(avatarImageNameArray: Array<string>): void {
   let randomAvatarIndex = randomInteger(0, avatarImageNameArray.length - 1); //get random index from array

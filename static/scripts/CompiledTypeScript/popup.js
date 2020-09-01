@@ -17,7 +17,7 @@ function HelpPopupHide() {
     $("#popup1").hide();
 }
 function TopPopupShow() {
-    $("#popup2").show();    
+    $("#popup2").show();
     showEasyModeScore();
 }
 function TopPopupHide() {
