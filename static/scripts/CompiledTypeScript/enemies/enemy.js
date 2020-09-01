@@ -177,9 +177,9 @@ function getSpawnCoordinates() {
 }
 let enemiesList = []; //will be contain all enemies
 //============= should remove after rewrite popup.js
-// const loosePageCollections = document.getElementsByClassName("loose-page");
+// const loosePageCollections = document.getElementsByClassName("loose-page") as HTMLCollectionOf<HTMLElement>;
 // const loosePage = loosePageCollections[0];
 // function makePopupVisible() {
-//     loosePage.style.display = "flex";
-//     document.getElementsByClassName("loose-page-score")[0].innerHTML = `Your score is: ${playerPoints}`;
+//   loosePage.style.display = "flex";
+//   document.getElementsByClassName("loose-page-score")[0].innerHTML = `Your score is: ${playerPoints}`;
 // }

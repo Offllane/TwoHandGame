@@ -29,14 +29,14 @@
     <div style="margin-top: 20px;" class="additional-inform-field">
       <div class="b-container">
         Help
-        <a href="javascript:HelpPopUpShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/2.png'%}"
+        <a href="javascript:HelpPopupShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/2.png'%}"
             alt=""></a>
       </div>
       <div class="b-popup" id="popup1">
         <div class="b-popup-content">
           <div class="popup-header">
             Help
-            <a class="popup-cancel" href="javascript:HelpPopUpHide()"><img class="popup-cancel-image"
+            <a class="popup-cancel" href="javascript:HelpPopupHide()"><img class="popup-cancel-image"
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
           </div>
           <div class="popup-main-inform">
@@ -62,7 +62,7 @@
     <div class="additional-inform-field">
       <div class="b-container">
         Best Players
-        <a href="javascript:TopPopUpShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/3.png'%}"
+        <a href="javascript:TopPopupShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/3.png'%}"
             alt=""></a>
       </div>
       <div class="b-popup" id="popup2">
@@ -75,7 +75,7 @@
             <div class="best-players_hard-mode">
               Hard mode
             </div>
-            <a class="popup-cancel-best-players" href="javascript:TopPopUpHide()"><img class="popup-cancel-image"
+            <a class="popup-cancel-best-players" href="javascript:TopPopupHide()"><img class="popup-cancel-image"
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
           </div>
           <div class="best-players_easy-mode-score best-players">
@@ -99,14 +99,14 @@
     <div class="additional-inform-field">
       <div class="b-container">
         Enemies
-        <a href="javascript:EnemyPopUpShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/3.2.png'%}"
+        <a href="javascript:EnemyPopupShow()"><img style="width:40px; height: 40px;" src="{% static 'img/shields/3.2.png'%}"
             alt=""></a>
       </div>
       <div class="b-popup" id="popup3">
         <div class="b-popup-content">
           <div class="popup-header">
             Enemies:
-            <a class="popup-cancel" href="javascript:EnemyPopUpHide()"><img class="popup-cancel-image"
+            <a class="popup-cancel" href="javascript:EnemyPopupHide()"><img class="popup-cancel-image"
                 src="{% static 'img/close(vector_version).png' %}" alt=""></a>
           </div>
           <div class="popup-main">
@@ -173,10 +173,10 @@
     </div>
     <script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
     <script src="{% static 'scripts/optimization.js' %}"></script>
-    <script src="{% static 'scripts/config.js' %}"></script>
+    <script src="{% static 'scripts/CompiledTypeScript/config.js' %}"></script>
     <script src="{% static 'scripts/CompiledTypeScript/createField.js' %}"></script>
-    <script src="{% static 'scripts/popup.js' %}"></script>
-    <script src="{% static 'scripts/popupSwitchMode.js' %}"></script>
+    <script src="{% static 'scripts/CompiledTypeScript/popupSwitchMode.js' %}"></script>
+    <script src="{% static 'scripts/CompiledTypeScript/popup.js' %}"></script>    
     
     <script src="{% static 'scripts/CompiledTypeScript/enemies/enemy.js' %}"></script>
     <script src="{% static 'scripts/enemies/reaper.js' %}"></script>
