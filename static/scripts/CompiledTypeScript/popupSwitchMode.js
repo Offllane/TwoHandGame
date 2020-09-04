@@ -13,6 +13,7 @@ const hardModeScore = document.querySelector(".best-players_hard-mode-score");
  */
 function showEasyModeScore() {
     easyModeScore.style.display = "block";
+    ``;
     hardModeButton.style.display = "none";
     hardModeButton.classList.remove("best-players_active");
     easyModeButton.classList.add("best-players_active");

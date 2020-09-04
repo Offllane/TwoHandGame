@@ -14,7 +14,7 @@ const hardModeScore: HTMLElement = document.querySelector(".best-players_hard-mo
  * @name showEasyModeScore
  */
 function showEasyModeScore(): void {
-  easyModeScore.style.display = "block";
+  easyModeScore.style.display = "block";``
   hardModeButton.style.display = "none";
   hardModeButton.classList.remove("best-players_active");
   easyModeButton.classList.add("best-players_active");
